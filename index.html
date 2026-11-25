@@ -222,6 +222,74 @@ main.in .reveal{animation:up .9s var(--ease) forwards;animation-delay:calc(var(-
 @keyframes fogl{to{transform:translateX(-5px)}}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+html{scroll-behavior:smooth}
+body{transition:background-color .7s}
+.mt,.mt *{transition:background-color .7s var(--ease),color .7s var(--ease),border-color .7s var(--ease),box-shadow .7s!important}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+.hero{transform:translateY(calc(var(--sy,0)*.12px));opacity:calc(1 - var(--sy,0)/600)}
+#clk{font-variant-numeric:tabular-nums}
+.rt{display:flex;gap:8px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:10px -18px 0;padding:2px 18px}
+.chips::-webkit-scrollbar{display:none}
+.fc{flex:none;padding:7px 14px;border-radius:99px;background:var(--glass);border:1px solid var(--glass-b);font-size:14px;transition:transform .35s var(--spring),background .3s}
+.fc:active{transform:scale(.92)}.fc.on{background:rgba(255,255,255,.3)}
+.set{flex:1;overflow-y:auto;padding:14px 0 calc(var(--sb) + 24px)}
+.grp{background:var(--glass);border:1px solid var(--glass-b);border-radius:22px;margin-bottom:14px;overflow:hidden}
+.srw{display:flex;align-items:center;gap:12px;padding:14px 16px;width:100%;text-align:left;font-size:16px;border-top:1px solid rgba(128,128,128,.15);transition:background .25s}
+.srw:first-child{border-top:0}.srw:active{background:rgba(128,128,128,.14)}
+.srw small{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+.srw>span:first-child{flex:1}.srw svg{width:18px;height:18px;color:var(--faint);transition:transform .5s var(--spring)}
+.srw.open svg{transform:rotate(90deg)}
+.seg{display:flex;background:rgba(128,128,128,.2);border-radius:12px;padding:3px;position:relative}
+.seg button{flex:1;position:relative;z-index:1;padding:7px 0;font-size:14px;border-radius:9px}
+.seg i{position:absolute;top:3px;bottom:3px;left:3px;width:calc((100% - 6px)/3);border-radius:9px;background:rgba(255,255,255,.3);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .55s var(--spring)}
+.stars{display:flex;gap:6px;justify-content:center;padding:0 0 16px}
+.stars button{width:40px;height:40px;transition:transform .4s var(--spring)}
+.stars button:active{transform:scale(.8)}
+.stars svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;transition:fill .3s,color .3s}
+.stars button.on svg{fill:#ffd27a;color:#ffd27a}
+.stars button.pop{animation:pop2 .6s var(--spring)}
+@keyframes pop2{50%{transform:scale(1.4) rotate(18deg)}}
+.acc{display:flex;align-items:center;gap:12px;padding:16px}
+.av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#ffd27a,#ff9f6b) center/cover;display:grid;place-items:center;font-weight:600;color:#10203a;flex:none}
+.about{max-height:0;overflow:hidden;opacity:0;padding:0 16px;font-size:14px;line-height:1.55;color:var(--muted);transition:max-height .6s var(--ease),opacity .5s,padding .5s var(--ease)}
+.about.open{max-height:240px;opacity:1;padding:2px 16px 16px}
+.gfake{padding:11px 22px;border-radius:99px;background:#fff;color:#222;font-weight:500;box-shadow:0 2px 8px rgba(0,0,0,.2);transition:transform .3s var(--spring)}
+.gfake:active{transform:scale(.94)}
+html[data-mode=light]{--txt:#10203a;--muted:rgba(16,32,58,.68);--faint:rgba(16,32,58,.48);--glass:rgba(255,255,255,.6);--glass-b:rgba(255,255,255,.9)}
+html[data-mode=light] .t-clear-day{background:linear-gradient(165deg,#8cc4ff,#d3e8ff 55%,#ffe2b8 120%)}
+html[data-mode=light] .t-clear-night{background:linear-gradient(172deg,#a9b4e6,#d3cdf0 60%,#efe3f5 125%)}
+html[data-mode=light] .t-cloudy-day{background:linear-gradient(165deg,#b4c3d6,#d6dfea 60%,#eef2f6 125%)}
+html[data-mode=light] .t-cloudy-night{background:linear-gradient(172deg,#9fa9c0,#c6cedb 60%,#dfe4ec 125%)}
+html[data-mode=light] .t-rain{background:linear-gradient(172deg,#8ea6c2,#bfd0e2 60%,#dbe6f0 125%)}
+html[data-mode=light] .t-snow{background:linear-gradient(172deg,#c3d6ec,#e6f0fa 55%,#fafcff 125%)}
+html[data-mode=light] .t-storm{background:linear-gradient(172deg,#8a81b0,#b9b2d8 55%,#d8d3ea 125%)}
+html[data-mode=light] .t-fog{background:linear-gradient(172deg,#bcc4cd,#dde1e6 60%,#eff1f3 125%)}
+html[data-mode=light] .temp{background:linear-gradient(180deg,#10203a 30%,rgba(16,32,58,.6));-webkit-background-clip:text;background-clip:text}
+html[data-mode=light] .summary{color:var(--txt);border-color:rgba(16,32,58,.1)}
+html[data-mode=light] .day{border-color:rgba(16,32,58,.1)}
+html[data-mode=light] .h.now{background:rgba(255,255,255,.75);border-color:#fff}
+html[data-mode=light] .h.now .t,html[data-mode=light] .sunrow b{color:var(--txt)}
+html[data-mode=light] .h .p,html[data-mode=light] .day .pp{color:#1f63d6}
+html[data-mode=light] .track,html[data-mode=light] .meter{background:rgba(16,32,58,.12)}
+html[data-mode=light] .panel{background:rgba(246,249,255,.92);border-color:rgba(0,0,0,.06)}
+html[data-mode=light] .sbar,html[data-mode=light] .flag,html[data-mode=light] .clr{background:rgba(16,32,58,.07)}
+html[data-mode=light] .cancel{color:#1f63d6}
+html[data-mode=light] .toast{background:rgba(255,255,255,.95);color:#10203a;border-color:rgba(0,0,0,.08)}
+html[data-mode=light] .fc.on,html[data-mode=light] .seg i{background:#fff}
+html[data-mode=light] .grab{background:rgba(16,32,58,.2)}
+
+/* exit animace panelů */
+.sheet{transition:visibility 0s linear .55s}
+.sheet.open{transition-delay:0s}
+.sheet-bd{transition:opacity .5s ease-in,backdrop-filter .5s ease-in,-webkit-backdrop-filter .5s ease-in}
+.panel{opacity:0;transform:translateY(105%) scale(.97);transform-origin:50% 100%;transition:transform .5s cubic-bezier(.5,0,.75,0),opacity .4s ease-in}
+.sheet.open .panel{opacity:1;transform:none;transition:transform .6s var(--ease),opacity .35s ease-out}
+.sheet .grp,.sheet .res{transition:opacity .3s ease-in,transform .3s ease-in}
+.sheet:not(.open) .grp{opacity:0;transform:translateY(14px)}
+.sheet.open .grp{animation:up .6s var(--ease) both}
+.sheet.open .grp:nth-child(2){animation-delay:.06s}.sheet.open .grp:nth-child(3){animation-delay:.12s}.sheet.open .grp:nth-child(4){animation-delay:.18s}
 </style>
 </head>
 <body>
@@ -244,7 +312,7 @@ main.in .reveal{animation:up .9s var(--ease) forwards;animation-delay:calc(var(-
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
     </button>
     <div class="brand"><svg viewBox="0 0 64 64" id="brandLogo"></svg><span>Tadx<b>Weather</b></span></div>
-    <button class="iconbtn unit" id="btnUnit" aria-label="Jednotky"><span>°C</span></button>
+    <div class="rt"><button class="iconbtn" id="btnSet" aria-label="Nastavení"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></button><button class="iconbtn unit" id="btnUnit" aria-label="Jednotky"><span>°C</span></button></div>
   </header>
 
   <div class="banner hidden" id="banner">
@@ -271,6 +339,9 @@ main.in .reveal{animation:up .9s var(--ease) forwards;animation-delay:calc(var(-
   </div>
 </div>
 
+<div class="sheet" id="set" aria-hidden="true"><div class="sheet-bd" data-sclose></div><div class="panel"><div class="grab"></div>
+<div class="srow"><div style="flex:1;font-size:24px;font-weight:600;padding-left:4px">Nastavení</div><button class="cancel" data-sclose>Hotovo</button></div>
+<div class="set" id="setBody"></div></div></div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -419,26 +490,34 @@ function setTheme(t){
   on.className='bg t-'+t;requestAnimationFrame(()=>{on.style.opacity=1;off.style.opacity=0});flip=!flip;
   $('meta[name=theme-color]').content=THEME_COL[t];
   const o=ORBS[t];document.querySelector('.o1').style.background=o[0];document.querySelector('.o2').style.background=o[1];
-  setFx(t==='rain'?'rain':t==='storm'?'rain':t==='snow'?'snow':t==='clear-night'?'stars':t==='cloudy-night'?'dim':'dust');
+  setFx({rain:'rain',storm:'storm',snow:'snow','clear-night':'stars','cloudy-night':'dim','clear-day':'sun','cloudy-day':'clouds',fog:'fog'}[t]);
   clearInterval(stormT);if(t==='storm'&&!reduce)stormT=setInterval(()=>{if(Math.random()<.5){const f=$('#flash');f.classList.remove('on');void f.offsetWidth;f.classList.add('on')}},3200);
 }
 const cv=$('#fx'),cx=cv.getContext('2d');let parts=[],fx='none',W=0,H=0;
 function resize(){const d=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
+const FXN={rain:120,storm:170,snow:90,stars:110,dim:35,dust:28,sun:26,clouds:6,fog:6};
+let spl=[],bolt=null,tt=0;
 function np(init){const r=Math.random;
-  if(fx==='rain')return{x:r()*W*1.2,y:init?r()*H:-30,l:12+r()*16,v:10+r()*8,o:.12+r()*.3};
-  if(fx==='snow')return{x:r()*W,y:init?r()*H:-10,r:1+r()*2.8,v:.4+r()*1.1,ph:r()*6.3,o:.45+r()*.5};
-  if(fx==='dust')return{x:r()*W,y:init?r()*H:H+10,r:.6+r()*1.6,v:.15+r()*.35,ph:r()*6.3,o:.08+r()*.18};
+  if(fx==='rain'||fx==='storm')return{x:r()*W*1.2,y:init?r()*H:-30,l:12+r()*16,v:10+r()*8,o:.14+r()*.3};
+  if(fx==='snow')return{x:r()*W,y:init?r()*H:-10,r:1+r()*2.8,v:.4+r()*1.1,ph:r()*6.3,o:.55+r()*.4};
+  if(fx==='dust'||fx==='sun')return{x:r()*W,y:init?r()*H:H+10,r:.6+r()*1.6,v:.15+r()*.35,ph:r()*6.3,o:.1+r()*.2};
+  if(fx==='clouds'||fx==='fog')return{x:init?r()*W:-260,y:(fx==='fog'?H*.3:0)+r()*H*(fx==='fog'?.65:.4),r:110+r()*130,v:.12+r()*.28,o:.05+r()*.07};
   return{x:r()*W,y:r()*H*.75,r:.3+r()*1.3,ph:r()*6.3,sp:.01+r()*.035};
 }
-function setFx(t){fx=t;const n={rain:120,snow:85,stars:110,dim:35,dust:28}[t]||0;parts=Array.from({length:n},()=>np(true))}
+function setFx(t){fx=t;parts=Array.from({length:FXN[t]||0},()=>np(true));spl=[];bolt=null}
 function loop(){
-  cx.clearRect(0,0,W,H);
+  tt++;cx.clearRect(0,0,W,H);const lt=isLight(),wc=lt?'110,130,180':'255,255,255',rc=lt?'70,100,150':'200,225,255';
+  if(fx==='sun'){const g=cx.createRadialGradient(W*.82,H*.08,0,W*.82,H*.08,W*(.85+.06*Math.sin(tt/90)));g.addColorStop(0,'rgba(255,236,170,.55)');g.addColorStop(1,'rgba(255,236,170,0)');cx.fillStyle=g;cx.fillRect(0,0,W,H)}
   for(let i=0;i<parts.length;i++){const p=parts[i];
-    if(fx==='rain'){cx.strokeStyle=`rgba(200,225,255,${p.o})`;cx.lineWidth=1.2;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(p.x-p.l*.25,p.y+p.l);cx.stroke();p.y+=p.v;p.x-=p.v*.25;if(p.y>H)parts[i]=np(false)}
-    else if(fx==='snow'){p.ph+=.02;cx.fillStyle=`rgba(255,255,255,${p.o})`;cx.beginPath();cx.arc(p.x+Math.sin(p.ph)*12,p.y,p.r,0,6.3);cx.fill();p.y+=p.v;if(p.y>H+10)parts[i]=np(false)}
-    else if(fx==='dust'){p.ph+=.01;cx.fillStyle=`rgba(255,255,255,${p.o})`;cx.beginPath();cx.arc(p.x+Math.sin(p.ph)*20,p.y,p.r,0,6.3);cx.fill();p.y-=p.v;if(p.y<-10)parts[i]=np(false)}
-    else{p.ph+=p.sp;const a=(fx==='dim'?.35:.9)*(.35+.65*Math.abs(Math.sin(p.ph)));cx.fillStyle=`rgba(255,255,255,${a})`;cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.3);cx.fill()}
+    if(fx==='rain'||fx==='storm'){cx.strokeStyle=`rgba(${rc},${p.o})`;cx.lineWidth=1.2;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(p.x-p.l*.25,p.y+p.l);cx.stroke();p.y+=p.v;p.x-=p.v*.25;if(p.y>H){if(Math.random()<.25)spl.push({x:p.x,y:H-Math.random()*40,t:0});parts[i]=np(false)}}
+    else if(fx==='snow'){p.ph+=.02;cx.fillStyle=`rgba(${wc},${p.o})`;cx.beginPath();cx.arc(p.x+Math.sin(p.ph)*12,p.y,p.r,0,6.3);cx.fill();p.y+=p.v;if(p.y>H+10)parts[i]=np(false)}
+    else if(fx==='dust'||fx==='sun'){p.ph+=.01;cx.fillStyle=`rgba(255,255,255,${p.o})`;cx.beginPath();cx.arc(p.x+Math.sin(p.ph)*20,p.y,p.r,0,6.3);cx.fill();p.y-=p.v;if(p.y<-10)parts[i]=np(false)}
+    else if(fx==='clouds'||fx==='fog'){const c=lt?'120,135,165':'255,255,255',a=p.o*(fx==='fog'?2:1.5),g=cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);g.addColorStop(0,`rgba(${c},${a})`);g.addColorStop(1,`rgba(${c},0)`);cx.fillStyle=g;cx.fillRect(p.x-p.r,p.y-p.r,p.r*2,p.r*2);p.x+=p.v;if(p.x-p.r>W)parts[i]=np(false)}
+    else{p.ph+=p.sp;const a=(fx==='dim'?.35:.9)*(.35+.65*Math.abs(Math.sin(p.ph)));cx.fillStyle=`rgba(${wc},${a})`;cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.3);cx.fill()}
   }
+  for(let i=spl.length-1;i>=0;i--){const q=spl[i];q.t++;cx.strokeStyle=`rgba(${rc},${.35*(1-q.t/14)})`;cx.lineWidth=1;cx.beginPath();cx.ellipse(q.x,q.y,q.t*.7,q.t*.25,0,0,6.3);cx.stroke();if(q.t>=14)spl.splice(i,1)}
+  if(fx==='storm'&&!bolt&&Math.random()<.004){let x=W*(.15+Math.random()*.7),y=0;const pts=[[x,y]];while(y<H*.55){x+=(Math.random()-.5)*60;y+=20+Math.random()*30;pts.push([x,y])}bolt={pts,life:16};const fl=$('#flash');fl.classList.remove('on');void fl.offsetWidth;fl.classList.add('on')}
+  if(bolt){cx.save();cx.strokeStyle=`rgba(235,225,255,${bolt.life/16})`;cx.lineWidth=2.2;cx.shadowColor='#b9a6ff';cx.shadowBlur=18;cx.beginPath();bolt.pts.forEach((q,i)=>i?cx.lineTo(q[0],q[1]):cx.moveTo(q[0],q[1]));cx.stroke();cx.restore();if(--bolt.life<=0)bolt=null}
   if(!reduce)requestAnimationFrame(loop);
 }
 addEventListener('resize',()=>{resize();setFx(fx)});resize();
@@ -475,10 +554,10 @@ function render(anim=true){
   const uv=dl.uv_index_max[0]??0,hum=cur.relative_humidity_2m,feels=cur.apparent_temperature,diff=feels-cur.temperature_2m;
   const summary=`${label}${pp>=30?`, pravděpodobnost srážek ${pp} %`:''}. Dnes maximum ${T(dl.temperature_2m_max[0])}°, minimum ${T(dl.temperature_2m_min[0])}°, vítr ${dirName(cur.wind_direction_10m)} ${windU(cur.wind_speed_10m).replace(/<\/?small>/g,' ').trim()}.`;
 
-  $('#main').innerHTML=`
+  $('#main').innerHTML=`<div id="chipw">${chips()}</div>
   <section class="hero">
     <div class="place reveal" style="--i:0"><span class="nm">${esc(p.name)}</span><button class="fav${isFav(p)?' on':''}" id="fav" aria-label="Oblíbené"><span class="burst"></span>${I.star}</button></div>
-    <div class="date reveal" style="--i:1">${esc(sub?sub+' · ':'')}${dateStr}</div>
+    <div class="date reveal" style="--i:1">${esc(sub?sub+' · ':'')}<span id="clk">${dateStr}</span></div>
     <div class="hero-icon reveal" style="--i:2">${icon(code,day)}</div>
     <div class="reveal" style="--i:3"><div class="temp"><span id="tv">${T(cur.temperature_2m)}</span><sup>°</sup></div></div>
     <div class="cond reveal" style="--i:4">${label}</div>
@@ -510,7 +589,7 @@ function render(anim=true){
   const m=$('#main');m.classList.remove('in');void m.offsetWidth;m.classList.add('in');
   countTo($('#tv'),T(cur.temperature_2m));
   setTimeout(()=>{const n=$('#needle svg');if(n)n.style.transform=`rotate(${cur.wind_direction_10m+180}deg)`},500);
-  $('#fav').onclick=toggleFav;$('#refresh').onclick=()=>{$('#refresh').classList.add('spin');load(S.place,true)};
+  $('#fav').onclick=toggleFav;bindChips();tick();$('#refresh').onclick=()=>{$('#refresh').classList.add('spin');load(S.place,true)};
 }
 function fmtDur(m){m=Math.round(m);const h=Math.floor(m/60),mm=m%60;return h?`${h} h ${mm} min`:`${mm} min`}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
@@ -532,10 +611,10 @@ function toggleFav(){
   const p=S.place,b=$('#fav');
   if(isFav(p)){S.favs=S.favs.filter(f=>!(Math.abs(f.lat-p.lat)<.01&&Math.abs(f.lon-p.lon)<.01));b.classList.remove('on');toast('Odebráno z oblíbených')}
   else{S.favs.unshift({name:p.name,cc:p.cc,country:p.country,admin:p.admin,lat:p.lat,lon:p.lon});b.classList.add('on');toast('⭐ Přidáno do oblíbených');b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse')}
-  store.set('tadx.favs',S.favs);
+  saveFavs();$('#chipw').innerHTML=chips();bindChips();vib();
 }
 $('#btnUnit').onclick=()=>{S.unit=S.unit==='C'?'F':'C';store.set('tadx.unit',S.unit);const b=$('#btnUnit');b.classList.toggle('flip');b.querySelector('span').textContent='°'+S.unit;S.lastTemp=null;render()};
-addEventListener('scroll',()=>{$('#top').style.setProperty('--hdr',Math.min(1,scrollY/80))},{passive:true});
+addEventListener('scroll',()=>{$('#top').style.setProperty('--hdr',Math.min(1,scrollY/80));document.documentElement.style.setProperty('--sy',Math.min(scrollY,420))},{passive:true});
 
 /* ---------- search ---------- */
 const sheet=$('#sheet'),q=$('#q'),res=$('#results');
@@ -543,7 +622,7 @@ function openSheet(){sheet.classList.add('open');sheet.setAttribute('aria-hidden
 function closeSheet(){sheet.classList.remove('open');sheet.setAttribute('aria-hidden','true');q.blur()}
 $('#btnSearch').onclick=openSheet;
 sheet.querySelectorAll('[data-close]').forEach(e=>e.onclick=closeSheet);
-addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeSheet();closeSet()}});
 $('#clr').onclick=e=>{e.preventDefault();q.value='';$('#clr').classList.remove('show');defaultList();q.focus()};
 let rows=[];
 function row(p,i,extra=''){rows.push(p);return`<button class="res ${extra}" data-k="${rows.length-1}" style="--i:${i}"><span class="flag">${extra==='loc'?I.pin:flag(p.cc)}</span><span><div class="n">${esc(p.name)}</div><div class="s">${esc([p.admin,p.country].filter(Boolean).join(', '))}</div></span><span class="go">${I.arrow}</span></button>`}
@@ -574,6 +653,56 @@ function locate(){
   toast('Zjišťuji polohu…');
   try{navigator.geolocation.getCurrentPosition(pos=>{closeSheet();S.lastTemp=null;load({name:'Moje poloha',cc:'',country:'',admin:'',lat:+pos.coords.latitude.toFixed(4),lon:+pos.coords.longitude.toFixed(4)})},()=>toast('Přístup k poloze nebyl povolen'),{timeout:10000,maximumAge:600000})}catch(e){toast('Poloha není dostupná')}
 }
+
+/* ---------- v2: mode, clock, account, settings ---------- */
+const GOOGLE_CLIENT_ID=''; // <- vlož své Google OAuth Client ID (Web application)
+S.mode=store.get('tadx.mode','dark');S.user=store.get('tadx.user',null);
+const mq=matchMedia('(prefers-color-scheme: dark)');
+const isLight=()=>S.mode==='auto'?!mq.matches:S.mode==='light';
+const vib=()=>{try{navigator.vibrate&&navigator.vibrate(8)}catch(e){}};
+function applyMode(){document.documentElement.dataset.mode=isLight()?'light':'dark'}
+mq.addEventListener&&mq.addEventListener('change',()=>{if(S.mode==='auto')applyMode()});
+function setMode(m,x,y){
+  if(m===S.mode)return;
+  const go=()=>{S.mode=m;store.set('tadx.mode',m);applyMode()};
+  if(document.startViewTransition&&!reduce){
+    const t=document.startViewTransition(go);
+    t.ready.then(()=>document.documentElement.animate({clipPath:[`circle(0px at ${x}px ${y}px)`,`circle(${Math.hypot(innerWidth,innerHeight)}px at ${x}px ${y}px)`]},{duration:850,easing:'cubic-bezier(.22,1,.36,1)',pseudoElement:'::view-transition-new(root)'})).catch(()=>{});
+  }else{document.body.classList.add('mt');go();setTimeout(()=>document.body.classList.remove('mt'),850)}
+}
+function tick(){const el=$('#clk');if(!el||!S.place)return;const d=S.data,o=d&&d.utc_offset_seconds!=null?d.utc_offset_seconds:Math.round(S.place.lon/15)*3600,t=new Date(Date.now()+o*1000);
+  el.textContent=t.toLocaleDateString('cs-CZ',{weekday:'long',day:'numeric',month:'long',timeZone:'UTC'})+' · '+t.toLocaleTimeString('cs-CZ',{hour:'2-digit',minute:'2-digit',second:'2-digit',timeZone:'UTC'})}
+setInterval(tick,1000);
+setInterval(()=>{if(S.place&&!document.hidden&&!S.demo)load(S.place,true)},6e5);
+function chips(){return S.favs.length?`<div class="chips reveal" style="--i:0">${S.favs.map((f,i)=>`<button class="fc${S.place&&Math.abs(f.lat-S.place.lat)<.01&&Math.abs(f.lon-S.place.lon)<.01?' on':''}" data-i="${i}">${esc(f.name)}</button>`).join('')}</div>`:''}
+function bindChips(){document.querySelectorAll('.fc').forEach(b=>b.onclick=()=>{vib();S.lastTemp=null;load(S.favs[+b.dataset.i])})}
+function saveFavs(){store.set(S.user?'tadx.favs.'+S.user.sub:'tadx.favs',S.favs)}
+function loadGsi(){return new Promise((ok,no)=>{if(window.google&&google.accounts)return ok();const e=document.createElement('script');e.src='https://accounts.google.com/gsi/client';e.onload=ok;e.onerror=no;document.head.appendChild(e)})}
+function gcb(r){try{const p=JSON.parse(decodeURIComponent(escape(atob(r.credential.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')))));
+  S.user={sub:p.sub,name:p.name,email:p.email,pic:p.picture};store.set('tadx.user',S.user);
+  const saved=store.get('tadx.favs.'+p.sub,[]);S.favs=[...saved,...S.favs.filter(f=>!saved.some(x=>Math.abs(x.lat-f.lat)<.01&&Math.abs(x.lon-f.lon)<.01))];saveFavs();
+  renderSet();$('#chipw').innerHTML=chips();bindChips();toast('Přihlášen jako '+(p.name||p.email))}catch(e){toast('Přihlášení se nepovedlo')}}
+function signOut(){try{google.accounts.id.disableAutoSelect()}catch(e){}S.user=null;store.set('tadx.user',null);S.favs=store.get('tadx.favs',[]);renderSet();$('#chipw').innerHTML=chips();bindChips();const b=$('#fav');if(b)b.classList.toggle('on',!!isFav(S.place));toast('Odhlášeno')}
+const SV='<svg viewBox="0 0 24 24" stroke-linejoin="round"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9z"/></svg>';
+function renderSet(){
+  const u=S.user,r=store.get('tadx.rate',0),mi=['auto','light','dark'].indexOf(S.mode);
+  $('#setBody').innerHTML=`<div class="grp">${u?`<div class="acc"><div class="av" style="${u.pic?`background-image:url(${esc(u.pic)})`:''}">${u.pic?'':esc((u.name||'?')[0])}</div><div style="flex:1;min-width:0"><div style="font-weight:600">${esc(u.name||'')}</div><div style="font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis">${esc(u.email||'')}</div></div><button class="cancel" id="so">Odhlásit</button></div>`:`<div class="acc"><div style="flex:1"><div style="font-weight:600">Přihlášení přes Google</div><div style="font-size:13px;color:var(--muted)">Ukládej oblíbené lokace do svého účtu</div></div></div><div style="padding:0 16px 16px;display:flex;justify-content:center"><div id="gbtn"></div></div>`}</div>
+  <div class="grp"><div class="srw"><span>Vzhled<small>Automaticky, světlý nebo tmavý režim</small></span></div><div style="padding:0 16px 14px"><div class="seg" id="seg"><i style="transform:translateX(${mi*100}%)"></i><button data-m="auto">Auto</button><button data-m="light">Světlý</button><button data-m="dark">Tmavý</button></div></div>
+  <button class="srw" id="su"><span>Jednotky<small>°C a km/h nebo °F a mph</small></span><b>°${S.unit}</b></button></div>
+  <div class="grp"><div class="srw"><span>Ohodnotit aplikaci<small>Jak se ti TadxWeather líbí?</small></span></div><div class="stars" id="stars">${[1,2,3,4,5].map(n=>`<button data-n="${n}" class="${n<=r?'on':''}">${SV}</button>`).join('')}</div></div>
+  <div class="grp"><button class="srw" id="ab"><span>O aplikaci<small>Verze 2.0</small></span>${I.arrow}</button><div class="about" id="abt">TadxWeather ukazuje aktuální počasí, hodinovou a 7denní předpověď pro libovolné město na světě. Data poskytuje Open-Meteo.com (CC BY 4.0). Oblíbená místa se ukládají v tomto zařízení, případně pod tvým Google účtem.</div></div>`;
+  if(!u){const g=$('#gbtn');if(GOOGLE_CLIENT_ID){loadGsi().then(()=>{google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:gcb});google.accounts.id.renderButton(g,{theme:'outline',size:'large',shape:'pill',width:260,locale:'cs'})}).catch(()=>toast('Google přihlášení není dostupné'))}else{g.innerHTML='<button class="gfake">Přihlásit přes Google</button>';g.firstChild.onclick=()=>toast('Nejdřív vlož Google Client ID do kódu (GOOGLE_CLIENT_ID)')}}
+  else $('#so').onclick=signOut;
+  document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{const m=b.dataset.m,rc=b.getBoundingClientRect();vib();$('#seg i').style.transform=`translateX(${['auto','light','dark'].indexOf(m)*100}%)`;setMode(m,rc.left+rc.width/2,rc.top+rc.height/2)});
+  $('#su').onclick=()=>{vib();$('#btnUnit').click();$('#su b').textContent='°'+S.unit};
+  document.querySelectorAll('#stars button').forEach(b=>b.onclick=()=>{const n=+b.dataset.n;store.set('tadx.rate',n);vib();document.querySelectorAll('#stars button').forEach((x,i)=>{x.classList.remove('on','pop');if(i<n)setTimeout(()=>{x.classList.add('on','pop')},i*90)});toast(n>=4?'Děkujeme za skvělé hodnocení! ★':'Díky za zpětnou vazbu, zlepšíme se')});
+  $('#ab').onclick=()=>{$('#ab').classList.toggle('open');$('#abt').classList.toggle('open')};
+}
+const setEl=$('#set');
+function openSet(){renderSet();setEl.classList.add('open');setEl.setAttribute('aria-hidden','false');vib()}
+function closeSet(){setEl.classList.remove('open');setEl.setAttribute('aria-hidden','true')}
+$('#btnSet').onclick=openSet;setEl.querySelectorAll('[data-sclose]').forEach(e=>e.onclick=closeSet);
+applyMode();if(S.user)S.favs=store.get('tadx.favs.'+S.user.sub,[]);
 
 /* ---------- boot ---------- */
 function hideSplash(){const s=$('#splash');if(!s.classList.contains('out'))setTimeout(()=>s.classList.add('out'),Math.max(0,1300-(performance.now()-t0)))}
