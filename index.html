@@ -603,6 +603,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const COUNTRY={CZ:'Česko',SK:'Slovensko',AT:'Rakousko',DE:'Německo',GB:'Spojené království',FR:'Francie',IT:'Itálie',ES:'Španělsko',NL:'Nizozemsko',PL:'Polsko',HU:'Maďarsko',GR:'Řecko',TR:'Turecko',NO:'Norsko',IS:'Island',US:'Spojené státy',CA:'Kanada',MX:'Mexiko',BR:'Brazílie',AR:'Argentina',EG:'Egypt',ZA:'Jihoafrická republika',AE:'Spojené arabské emiráty',IN:'Indie',TH:'Thajsko',SG:'Singapur',CN:'Čína',JP:'Japonsko',KR:'Jižní Korea',AU:'Austrálie',NZ:'Nový Zéland',HR:'Chorvatsko',PT:'Portugalsko'};
 const C=(name,cc,admin,lat,lon)=>({name,cc,country:COUNTRY[cc]||cc,admin,lat,lon});
 const CITIES=[
+C('Lublaň','SI','Slovinsko',46.0569,14.5058),C('Kodaň','DK','Hlavní město',55.6761,12.5683),C('Stockholm','SE','Stockholm',59.3293,18.0686),C('Helsinky','FI','Uusimaa',60.1699,24.9384),C('Dublin','IE','Leinster',53.3498,-6.2603),C('Brusel','BE','Brusel',50.8503,4.3517),C('Curych','CH','Curych',47.3769,8.5417),C('Ženeva','CH','Ženeva',46.2044,6.1432),C('Záhřeb','HR','Záhřeb',45.815,15.9819),C('Bělehrad','RS','Bělehrad',44.7866,20.4489),C('Bukurešť','RO','Bukurešť',44.4268,26.1025),C('Sofie','BG','Sofie',42.6977,23.3219),C('Kyjev','UA','Kyjev',50.4501,30.5234),C('Moskva','RU','Moskva',55.7558,37.6173),C('Petrohrad','RU','Petrohrad',59.9311,30.3609),C('Edinburgh','GB','Skotsko',55.9533,-3.1883),C('Benátky','IT','Benátsko',45.4408,12.3155),C('Milán','IT','Lombardie',45.4642,9.19),C('Neapol','IT','Kampánie',40.8518,14.2681),C('Hamburk','DE','Hamburk',53.5511,9.9937),C('Frankfurt','DE','Hesensko',50.1109,8.6821),C('Krakov','PL','Malopolské',50.0647,19.945),C('Vratislav','PL','Dolnoslezské',51.1079,17.0385),C('Gdaňsk','PL','Pomořské',54.352,18.6466),C('Tallinn','EE','Harjumaa',59.437,24.7536),C('Riga','LV','Riga',56.9496,24.1052),C('Vilnius','LT','Vilnius',54.6872,25.2797),C('Marrákeš','MA','Marrákeš-Safí',31.6295,-7.9811),C('Tel Aviv','IL','Tel Aviv',32.0853,34.7818),C('Hongkong','HK','Hongkong',22.3193,114.1694),
 C('Praha','CZ','Hlavní město Praha',50.0755,14.4378),C('Brno','CZ','Jihomoravský kraj',49.1951,16.6068),C('Ostrava','CZ','Moravskoslezský kraj',49.8209,18.2625),C('Plzeň','CZ','Plzeňský kraj',49.7384,13.3736),C('Liberec','CZ','Liberecký kraj',50.7663,15.0543),C('Olomouc','CZ','Olomoucký kraj',49.5938,17.2509),C('České Budějovice','CZ','Jihočeský kraj',48.9745,14.4743),C('Hradec Králové','CZ','Královéhradecký kraj',50.2104,15.8252),C('Ústí nad Labem','CZ','Ústecký kraj',50.6607,14.0323),C('Pardubice','CZ','Pardubický kraj',50.0343,15.7812),C('Zlín','CZ','Zlínský kraj',49.2265,17.6707),C('Jihlava','CZ','Kraj Vysočina',49.3961,15.5912),C('Karlovy Vary','CZ','Karlovarský kraj',50.2319,12.872),C('Český Krumlov','CZ','Jihočeský kraj',48.8127,14.3175),C('Kutná Hora','CZ','Středočeský kraj',49.9484,15.2682),C('Kladno','CZ','Středočeský kraj',50.1473,14.1029),C('Opava','CZ','Moravskoslezský kraj',49.9387,17.9026),C('Třebíč','CZ','Kraj Vysočina',49.2149,15.8817),
 C('Bratislava','SK','Bratislavský kraj',48.1486,17.1077),C('Vídeň','AT','Vídeň',48.2082,16.3738),C('Berlín','DE','Berlín',52.52,13.405),C('Mnichov','DE','Bavorsko',48.1351,11.582),C('Londýn','GB','Anglie',51.5074,-0.1278),C('Paříž','FR','Île-de-France',48.8566,2.3522),C('Řím','IT','Lazio',41.9028,12.4964),C('Madrid','ES','Madrid',40.4168,-3.7038),C('Barcelona','ES','Katalánsko',41.3874,2.1686),C('Lisabon','PT','Lisabon',38.7223,-9.1393),C('Amsterdam','NL','Severní Holandsko',52.3676,4.9041),C('Varšava','PL','Mazovské vojvodství',52.2297,21.0122),C('Budapešť','HU','Budapešť',47.4979,19.0402),C('Split','HR','Splitsko-dalmatská',43.5081,16.4402),C('Atény','GR','Attika',37.9838,23.7275),C('Istanbul','TR','Istanbul',41.0082,28.9784),C('Oslo','NO','Oslo',59.9139,10.7522),C('Reykjavík','IS','Hlavní region',64.1466,-21.9426),
 C('New York','US','New York',40.7128,-74.006),C('Los Angeles','US','Kalifornie',34.0522,-118.2437),C('Miami','US','Florida',25.7617,-80.1918),C('Toronto','CA','Ontario',43.6532,-79.3832),C('Ciudad de México','MX','Mexiko',19.4326,-99.1332),C('Rio de Janeiro','BR','Rio de Janeiro',-22.9068,-43.1729),C('Buenos Aires','AR','Buenos Aires',-34.6037,-58.3816),C('Káhira','EG','Káhira',30.0444,31.2357),C('Kapské Město','ZA','Západní Kapsko',-33.9249,18.4241),C('Dubaj','AE','Dubaj',25.2048,55.2708),C('Bombaj','IN','Maháráštra',19.076,72.8777),C('Bangkok','TH','Bangkok',13.7563,100.5018),C('Singapur','SG','Singapur',1.3521,103.8198),C('Peking','CN','Peking',39.9042,116.4074),C('Tokio','JP','Tokio',35.6762,139.6503),C('Soul','KR','Soul',37.5665,126.978),C('Sydney','AU','Nový Jižní Wales',-33.8688,151.2093),C('Auckland','NZ','Auckland',-36.8485,174.7633)];
@@ -1054,13 +1055,28 @@ q.addEventListener('input',()=>{const v=q.value.trim();$('#clr').classList.toggl
 q.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const f=res.querySelector('.res');if(f)f.click()}});
 async function search(v){
   const id=++qid;let list=null;
-  if(v.length>=2){try{list=await LIVE.geo(v)}catch(e){}}
-  if(!list){const n=norm(v);list=CITIES.filter(c=>norm(c.name).includes(n)||norm(c.country).includes(n)||norm(c.admin).includes(n));
+  const al=aliasOf(v);
+  if(v.length>=2){try{list=await LIVE.geo(v);if(al&&norm(al)!==norm(v)){const l2=await LIVE.geo(al).catch(()=>[]);list=[...l2.slice(0,3),...list.filter(a=>!l2.some(b=>Math.abs(a.lat-b.lat)<.05&&Math.abs(a.lon-b.lon)<.05))]}}catch(e){}}
+  if(!list){const n=norm(al||v);list=CITIES.filter(c=>norm(c.name).includes(n)||norm(c.country).includes(n)||norm(c.admin).includes(n));
     list.sort((a,b)=>(norm(b.name).startsWith(n)-norm(a.name).startsWith(n))||((b.cc==='CZ')-(a.cc==='CZ')))}
+  if(al){const lc=CITIES.find(c=>norm(c.name)===norm(al));if(lc&&!list.some(p=>Math.abs(p.lat-lc.lat)<.05&&Math.abs(p.lon-lc.lon)<.05))list.unshift(lc)}
   if(id!==qid)return;rows=[];
   if(!list.length){res.innerHTML=`<div class="empty">${I.search}<div>Nic jsme nenašli pro „${esc(v)}“</div><div style="font-size:13px;margin-top:6px;color:var(--faint)">Zkus jiný název města${S.demo?' (v náhledu je omezený seznam měst)':''}</div></div>`;return}
   res.innerHTML=`<div class="sec">Výsledky</div>`+list.map((p,i)=>row(p,i)).join('');bindRows();
 }
+const ALIAS={ljubljana:'Lublaň',copenhagen:'Kodaň',kobenhavn:'Kodaň',kopenhagen:'Kodaň',london:'Londýn',vienna:'Vídeň',wien:'Vídeň',rome:'Řím',roma:'Řím',paris:'Paříž',munich:'Mnichov',munchen:'Mnichov',berlin:'Berlín',lisbon:'Lisabon',lisboa:'Lisabon',warsaw:'Varšava',warszawa:'Varšava',prague:'Praha',budapest:'Budapešť',athens:'Atény',athina:'Atény',seoul:'Soul',tokyo:'Tokio',beijing:'Peking',singapore:'Singapur',cairo:'Káhira','cape town':'Kapské Město',mumbai:'Bombaj',brussels:'Brusel',bruxelles:'Brusel',zurich:'Curych',geneva:'Ženeva',geneve:'Ženeva',zagreb:'Záhřeb',belgrade:'Bělehrad',beograd:'Bělehrad',bucharest:'Bukurešť',bucuresti:'Bukurešť',sofia:'Sofie',kyiv:'Kyjev',kiev:'Kyjev',moscow:'Moskva','saint petersburg':'Petrohrad','st petersburg':'Petrohrad',helsinki:'Helsinky',venice:'Benátky',venezia:'Benátky',milan:'Milán',milano:'Milán',naples:'Neapol',napoli:'Neapol',hamburg:'Hamburk',cologne:'Kolín nad Rýnem',koln:'Kolín nad Rýnem',krakow:'Krakov',cracow:'Krakov',wroclaw:'Vratislav',breslau:'Vratislav',gdansk:'Gdaňsk',pressburg:'Bratislava',mexico:'Ciudad de México','mexico city':'Ciudad de México',nyc:'New York',dubai:'Dubaj',marrakech:'Marrákeš',marrakesh:'Marrákeš','hong kong':'Hongkong',vilnius:'Vilnius',tallin:'Tallinn',edinburg:'Edinburgh',dublin:'Dublin',stockholm:'Stockholm',reykjavik:'Reykjavík'};
+const aliasOf=v=>{const n=norm(v).trim();if(n.length<3)return null;if(ALIAS[n])return ALIAS[n];const k=Object.keys(ALIAS).find(x=>x.startsWith(n));return k?ALIAS[k]:null};
+/* psaní měst do vyhledávače */
+const TW=['Praha','Ljubljana','Kodaň','Londýn','New York','Vídeň','Tokio','Copenhagen','Paříž','Reykjavík','Kapské Město'];
+let twI=0,twC=0,twD=false;
+function twStep(){
+  if(reduce){q.placeholder='Hledat město';return}
+  if(!sheet.classList.contains('open')||q.value){setTimeout(twStep,500);return}
+  const w=TW[twI];let d=twD?45:85;
+  if(!twD){twC++;if(twC>=w.length){twD=true;d=1400}}else{twC--;if(twC<=0){twD=false;twI=(twI+1)%TW.length;d=380}}
+  q.placeholder='Hledat: '+w.slice(0,Math.max(0,twC))+(twC%2||twD&&twC>=w.length?'|':'\u200a');
+  setTimeout(twStep,d)}
+twStep();
 function locate(){
   if(!navigator.geolocation){toast('Poloha není v tomto prohlížeči dostupná');return}
   toast('Zjišťuji polohu…');
@@ -1126,12 +1142,14 @@ function renderSet(pg=setPage,dir=''){
     <div class="slab">Aplikace</div>
     <div class="grp">
       <button class="srw" id="sonb"><em class="si">${LI('hand')}</em><span class="tx">Úvod do aplikace<small>Co TadxWeather umí</small></span>${I.arrow}</button>
-      <button class="srw" data-go="about"><em class="si">${LI('info')}</em><span class="tx">O aplikaci<small>Verze 3.0 · zdroj dat · upozornění</small></span>${I.arrow}</button>
+      <button class="srw" data-go="about"><em class="si">${LI('info')}</em><span class="tx">O aplikaci<small>Verze 3.1 · novinky · zdroj dat</small></span>${I.arrow}</button>
     </div>
     <div class="slab">Hodnocení</div>
     <div class="grp"><div class="srw"><em class="si">${LI('star')}</em><span class="tx">Ohodnotit aplikaci<small>Jak se ti TadxWeather líbí?</small></span></div><div class="stars" id="stars">${[1,2,3,4,5].map(n=>`<button data-n="${n}" class="${n<=r?'on':''}">${SV}</button>`).join('')}</div></div>`;
   }else{
-    h=`<div class="abt-hero">${icon(2,1).replace('class="ic"','class="ic ab-logo"')}<div class="ab-name">Tadx<b>Weather</b></div><div class="ab-ver">Verze 3.0</div></div>
+    h=`<div class="abt-hero">${icon(2,1).replace('class="ic"','class="ic ab-logo"')}<div class="ab-name">Tadx<b>Weather</b></div><div class="ab-ver">Verze 3.1</div></div>
+    <div class="slab">Co je nového</div>
+    <div class="grp"><div class="srw"><span class="tx">Psaní měst ve vyhledávání<small>Animovaný náhled s ukázkami měst</small></span></div><div class="srw"><span class="tx">České i zahraniční názvy<small>Lublaň i Ljubljana, Kodaň i Copenhagen, Vídeň i Wien…</small></span></div><div class="srw"><span class="tx">30 nových měst<small>Lublaň, Kodaň, Stockholm, Helsinky, Dublin a další</small></span></div><div class="srw"><span class="tx">Postavička v krajině<small>Kluk nebo holka podle počasí</small></span></div></div>
     <div class="grp"><div class="abt-text">TadxWeather ukazuje aktuální počasí, hodinovou a 7denní předpověď pro libovolné město na světě, včetně kvality ovzduší, životního indexu a fáze Měsíce. Oblíbená místa se ukládají v tomto zařízení, případně pod tvým Google účtem.</div></div>
     <div class="grp"><div class="srw"><span class="tx">Zdroj dat<small>Open-Meteo.com (CC BY 4.0)</small></span></div><div class="srw"><span class="tx">Upozornění<small>Vychází z předpovědi, nejde o oficiální výstrahy</small></span></div></div>`;
   }
