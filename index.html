@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1026">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%232a3d9a%22/%3E%3Cstop offset=%221%22 stop-color=%22%230b1026%22/%3E%3C/linearGradient%3E%3CradialGradient id=%22s%22 cx=%22.36%22 cy=%22.32%22 r=%22.8%22%3E%3Cstop offset=%220%22 stop-color=%22%23fff6c2%22/%3E%3Cstop offset=%22.5%22 stop-color=%22%23ffc93c%22/%3E%3Cstop offset=%221%22 stop-color=%22%23ff8f24%22/%3E%3C/radialGradient%3E%3ClinearGradient id=%22c%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23fff%22/%3E%3Cstop offset=%221%22 stop-color=%22%23cddbee%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2215%22 fill=%22url%28%23b%29%22/%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2212%22 fill=%22url%28%23s%29%22/%3E%3Cpath d=%22M19 50h29a12 12 0 0 0 2-23.8A16 16 0 0 0 20.2 22.6 13.6 13.6 0 0 0 19 50z%22 transform=%22translate%281 3%29%22 fill=%22url%28%23c%29%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -380,6 +381,56 @@ html[data-mode=light] .lt i.ok{color:#1b8a4b}html[data-mode=light] .lt i.no{colo
 html[data-mode=light] .mapchips button.on{background:#fff}
 .mapbox{height:340px;border-radius:18px;overflow:hidden;background:rgba(128,128,128,.15);display:grid;place-items:center}.mapbox iframe{width:100%;height:100%;border:0;display:block}
 .mapgo{padding:12px 22px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-b);font-size:15px}
+.h[role=button]{cursor:pointer}
+.ydsum{display:flex;gap:12px;align-items:center;padding:12px 16px;margin:0 0 12px;border-radius:20px;background:var(--glass);border:1px solid var(--glass-b);font-size:15px}.ydsum>span{font-size:22px}.ydsum small{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+
+/* ---------- 2.9 vylepseni ---------- */
+.sp-sub{margin-top:14px;font-size:13px;letter-spacing:.4px;color:rgba(255,255,255,.55);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:.35}50%{opacity:1}}
+.sp-logo{filter:drop-shadow(0 0 22px rgba(255,201,60,.35))}
+#splash .sp-logo{animation:pop 1s var(--spring) both,bob 5s 1s ease-in-out infinite}
+#splash .sp-name{color:#fff}#splash .sp-sub{color:rgba(255,255,255,.55)}
+/* svetly motiv: viditelny mrak */
+html[data-mode=light] .ic .cloud path:nth-child(2){stroke:rgba(70,104,160,.55);stroke-width:1.3}
+html[data-mode=light] .ic .cloud path:nth-child(1){opacity:.4}
+html[data-mode=light] .ic{filter:drop-shadow(0 2px 3px rgba(30,60,110,.3))}
+html[data-mode=light] .hero-icon{filter:drop-shadow(0 14px 22px rgba(30,60,110,.4))}
+html[data-mode=light] .hero-icon .ic{filter:none}
+html[data-mode=light] #splash .ic,html[data-mode=light] #splash .ic .cloud path{filter:none;stroke:none}
+/* pohyb a odezva */
+.card{transition:transform .4s var(--spring),box-shadow .4s}
+.card:active{transform:scale(.985)}
+.day,.h[role=button],.dt,.srw{transition:transform .3s var(--spring),background .25s}
+.day:active,.h[role=button]:active{transform:scale(.97)}
+.day .lo,.day .hi,.h .v,.dt b,.big,.temp{font-variant-numeric:tabular-nums}
+button:focus-visible,[role=button]:focus-visible,a:focus-visible{outline:2px solid #8ec5ff;outline-offset:2px}
+.sheet.open .panel{animation:up .55s var(--spring) both}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* ---------- 3.0: ikony Lucide a carousel ---------- */
+.li{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.card-h .li{width:15px;height:15px;vertical-align:0}
+.si .li{width:18px;height:18px}
+.al>span{color:#ffb454;flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:rgba(255,180,84,.16)}.al>span .li{width:18px;height:18px}
+.lt .e{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(128,128,128,.18);color:var(--txt)}.lt .e .li{width:24px;height:24px}
+.ob-pg li span{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.1);flex:none}.ob-pg li span .li{width:19px;height:19px}
+.ydsum>span{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(128,128,128,.18);flex:none}.ydsum>span .li{width:20px;height:20px}
+.dsum span{display:inline-flex;align-items:center;gap:6px}.dsum .li{width:15px;height:15px}
+.hl span{display:inline-flex;align-items:center;gap:4px}.hl .li{width:16px;height:16px}
+.mapchips button{display:flex;align-items:center;justify-content:center;gap:5px}.mapchips .li{width:14px;height:14px}
+.mapgo{display:inline-flex;align-items:center;gap:8px}.mapgo .li{width:15px;height:15px}
+.flag .cc{font-size:13px;font-weight:600;letter-spacing:.5px}.flag .li{width:20px;height:20px}
+.clr .li{width:12px;height:12px}
+.cdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;margin-right:7px;vertical-align:1px;opacity:.8}
+.srw .si{color:var(--txt)}
+/* carousel */
+.hours,.lfc{scroll-padding:0 16px;scroll-snap-type:x proximity;scroll-behavior:smooth;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%)}
+.lfc{scroll-snap-type:x mandatory}
+.hours{gap:8px;padding:4px 16px 6px;cursor:grab;touch-action:pan-x pan-y}
+.h{scroll-snap-align:start;border:1px solid transparent}
+.hprog{height:3px;border-radius:3px;background:rgba(128,128,128,.2);margin:10px auto 0;width:84px;overflow:hidden}
+.hprog i{display:block;height:100%;width:30%;border-radius:3px;background:var(--txt);opacity:.7;transition:transform .12s linear}
+.hours[style*="grabbing"]{scroll-behavior:auto}
 </style>
 </head>
 <body>
@@ -392,7 +443,7 @@ html[data-mode=light] .mapchips button.on{background:#fff}
   <div class="sp-in">
     <svg class="sp-logo" viewBox="0 0 64 64" id="spLogo"></svg>
     <div class="sp-name" id="spName"></div>
-    <div class="sp-bar"><i></i></div>
+    <div class="sp-bar"><i></i></div><div class="sp-sub">Načítám počasí…</div>
   </div>
 </div>
 
@@ -421,7 +472,7 @@ html[data-mode=light] .mapchips button.on{background:#fff}
       <label class="sbar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         <input id="q" type="search" placeholder="Hledat město v Česku i ve světě…" autocomplete="off" enterkeyhint="search">
-        <button class="clr" id="clr" aria-label="Smazat">✕</button>
+        <button class="clr" id="clr" aria-label="Smazat"><svg class="li" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
       </label>
       <button class="cancel" data-close>Zrušit</button>
     </div>
@@ -458,7 +509,7 @@ const wmo=c=>WMO[c]||['Neznámé','cloudy'];
 
 const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
 const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-const flag=cc=>cc&&cc.length===2?String.fromCodePoint(...cc.toUpperCase().split('').map(c=>127397+c.charCodeAt(0))):'🌍';
+const flag=cc=>cc&&cc.length===2?`<b class="cc">${cc.toUpperCase()}</b>`:LI('globe');
 function withTimeout(url,ms=7000){const ac=new AbortController();const t=setTimeout(()=>ac.abort(),ms);return fetch(url,{signal:ac.signal}).finally(()=>clearTimeout(t))}
 
 const LIVE={
@@ -470,7 +521,7 @@ const LIVE={
   async wx(p){
     const u=`https://api.open-meteo.com/v1/forecast?latitude=${p.lat}&longitude=${p.lon}`+
       `&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code,wind_speed_10m,wind_direction_10m,pressure_msl,dew_point_2m,visibility,wind_gusts_10m`+
-      `&hourly=temperature_2m,weather_code,precipitation_probability,is_day`+
+      `&hourly=temperature_2m,weather_code,precipitation_probability,is_day,apparent_temperature,relative_humidity_2m,wind_speed_10m,precipitation`+
       `&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max,precipitation_probability_max,precipitation_sum,wind_speed_10m_max`+
       `&timezone=auto&forecast_days=14`;
     const r=await withTimeout(u);if(!r.ok)throw new Error('wx');return r.json();
@@ -479,6 +530,9 @@ const LIVE={
     const r=await withTimeout(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${p.lat}&longitude=${p.lon}&current=european_aqi,pm2_5,pm10,alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,olive_pollen,ragweed_pollen&timezone=auto`);
     if(!r.ok)throw new Error('air');return (await r.json()).current;
   },
+  async yday(p){
+    const r=await withTimeout(`https://api.open-meteo.com/v1/forecast?latitude=${p.lat}&longitude=${p.lon}&daily=temperature_2m_max,temperature_2m_min&past_days=1&forecast_days=1&timezone=auto`);
+    if(!r.ok)throw new Error('yday');const j=await r.json();return j.daily&&j.daily.temperature_2m_max&&j.daily.temperature_2m_max.length>1?{mx:j.daily.temperature_2m_max[0],mn:j.daily.temperature_2m_min[0]}:null},
   async rain(p){
     const r=await withTimeout(`https://api.open-meteo.com/v1/forecast?latitude=${p.lat}&longitude=${p.lon}&minutely_15=precipitation&forecast_minutely_15=8&timezone=auto`);
     if(!r.ok)throw new Error('rain');const j=await r.json();return j.minutely_15&&j.minutely_15.precipitation}
@@ -505,7 +559,7 @@ function demoWx(p){
   const pool=al<23?[0,1,1,2,2,80,95,3]:base<4?[3,3,71,73,2,45,1,61]:[0,1,2,2,3,3,61,63,80,45];
   const d0=new Date(L.getFullYear(),L.getMonth(),L.getDate());
   const daily={time:[],weather_code:[],temperature_2m_max:[],temperature_2m_min:[],sunrise:[],sunset:[],uv_index_max:[],precipitation_probability_max:[],precipitation_sum:[],wind_speed_10m_max:[]};
-  const hourly={time:[],temperature_2m:[],weather_code:[],precipitation_probability:[],is_day:[]};
+  const hourly={time:[],temperature_2m:[],weather_code:[],precipitation_probability:[],is_day:[],apparent_temperature:[],relative_humidity_2m:[],wind_speed_10m:[],precipitation:[]};
   const hm=h=>`${pad(Math.floor(h))}:${pad(Math.round((h%1)*60)%60)}`;
   for(let d=0;d<14;d++){
     const dd=new Date(d0.getTime()+d*864e5),s=ds(dd);
@@ -522,6 +576,7 @@ function demoWx(p){
       let hc=code;if(!wet&&!isDay&&code>1)hc=r()<.5?1:code;if(wet&&r()<.25)hc=3;
       hourly.time.push(`${s}T${pad(h)}:00`);hourly.temperature_2m.push(+(t+(r()-.5)).toFixed(1));hourly.weather_code.push(hc);
       hourly.precipitation_probability.push(hc>=51?Math.round(pmax*(.6+r()*.4)):Math.round(r()*8));hourly.is_day.push(isDay);
+      const tt=hourly.temperature_2m[hourly.temperature_2m.length-1];hourly.apparent_temperature.push(+(tt-1-r()*2).toFixed(1));hourly.relative_humidity_2m.push(Math.round(55+r()*35));hourly.wind_speed_10m.push(+(4+r()*20).toFixed(1));hourly.precipitation.push(hc>=51?+(r()*1.5).toFixed(1):0);
     }
   }
   const H=L.getHours(),idx=H;
@@ -531,6 +586,8 @@ function demoWx(p){
 
 /* ---------- icons ---------- */
 let uid=0;
+const LP={"rain": "<path d=\"M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242\"/><path d=\"M16 14v6\"/><path d=\"M8 14v6\"/><path d=\"M12 16v6\"/>", "thermo": "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\"/>", "star": "<polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"/>", "up": "<polyline points=\"22 7 13.5 15.5 8.5 10.5 2 17\"/><polyline points=\"16 7 22 7 22 13\"/>", "down": "<polyline points=\"22 17 13.5 8.5 8.5 13.5 2 7\"/><polyline points=\"16 17 22 17 22 11\"/>", "flat": "<polyline points=\"18 8 22 12 18 16\"/><polyline points=\"6 8 2 12 6 16\"/><line x1=\"2\" x2=\"22\" y1=\"12\" y2=\"12\"/>", "flame": "<path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"/>", "snow": "<line x1=\"2\" x2=\"22\" y1=\"12\" y2=\"12\"/><line x1=\"12\" x2=\"12\" y1=\"2\" y2=\"22\"/><path d=\"m20 16-4-4 4-4\"/><path d=\"m4 8 4 4-4 4\"/><path d=\"m16 4-4 4-4-4\"/><path d=\"m8 20 4-4 4 4\"/>", "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2\"/><path d=\"M12 20v2\"/><path d=\"m4.93 4.93 1.41 1.41\"/><path d=\"m17.66 17.66 1.41 1.41\"/><path d=\"M2 12h2\"/><path d=\"M20 12h2\"/><path d=\"m6.34 17.66-1.41 1.41\"/><path d=\"m19.07 4.93-1.41 1.41\"/>", "wind": "<path d=\"M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2\"/><path d=\"M9.6 4.6A2 2 0 1 1 11 8H2\"/><path d=\"M12.6 19.4A2 2 0 1 0 14 16H2\"/>", "alert": "<path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/>", "leaf": "<path d=\"M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z\"/><path d=\"M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12 6 12 12 16 14\"/>", "globe": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"/><path d=\"M2 12h20\"/>", "flower": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5\"/><path d=\"M12 7.5V9\"/><path d=\"M7.5 12H9\"/><path d=\"M16.5 12H15\"/><path d=\"M12 16.5V15\"/><path d=\"m8 8 1.88 1.88\"/><path d=\"M14.12 9.88 16 8\"/><path d=\"m8 16 1.88-1.88\"/><path d=\"M14.12 14.12 16 16\"/>", "bolt": "<path d=\"M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973\"/><path d=\"m13 12-3 5h4l-3 5\"/>", "thermosnow": "<path d=\"M2 12h10\"/><path d=\"M9 4v16\"/><path d=\"m3 9 3 3-3 3\"/><path d=\"M12 6 9 9 6 6\"/><path d=\"m6 18 3-3 1.5 1.5\"/><path d=\"M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\"/>", "run": "<path d=\"M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z\"/><path d=\"M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z\"/><path d=\"M16 17h4\"/><path d=\"M4 13h4\"/>", "car": "<path d=\"M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2\"/><circle cx=\"7\" cy=\"17\" r=\"2\"/><path d=\"M9 17h6\"/><circle cx=\"17\" cy=\"17\" r=\"2\"/>", "shirt": "<path d=\"M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z\"/>", "layers": "<path d=\"m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z\"/><path d=\"m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65\"/><path d=\"m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65\"/>", "umbrella": "<path d=\"M22 12a10.06 10.06 1 0 0-20 0Z\"/><path d=\"M12 12v8a2 2 0 0 0 4 0\"/><path d=\"M12 2v1\"/>", "moon": "<path d=\"M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z\"/>", "radar": "<path d=\"M19.07 4.93A10 10 0 0 0 6.99 3.34\"/><path d=\"M4 6h.01\"/><path d=\"M2.29 9.62A10 10 0 1 0 21.31 8.35\"/><path d=\"M16.24 7.76A6 6 0 1 0 8.23 16.67\"/><path d=\"M12 18h.01\"/><path d=\"M17.99 11.66A6 6 0 0 1 15.77 16.67\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/><path d=\"m13.41 10.59 5.66-5.66\"/>", "cloud": "<path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"/>", "sunmoon": "<path d=\"M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4\"/><path d=\"M12 2v2\"/><path d=\"M12 20v2\"/><path d=\"m4.9 4.9 1.4 1.4\"/><path d=\"m17.7 17.7 1.4 1.4\"/><path d=\"M2 12h2\"/><path d=\"M20 12h2\"/><path d=\"m6.3 17.7-1.4 1.4\"/><path d=\"m19.1 4.9-1.4 1.4\"/>", "cal": "<path d=\"M8 2v4\"/><path d=\"M16 2v4\"/><rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"/><path d=\"M3 10h18\"/>", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\"/><path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\"/><path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\"/><path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\"/>", "info": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 16v-4\"/><path d=\"M12 8h.01\"/>", "search": "<circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/>", "pin": "<path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/>", "swipe": "<polyline points=\"18 8 22 12 18 16\"/><polyline points=\"6 8 2 12 6 16\"/><line x1=\"2\" x2=\"22\" y1=\"12\" y2=\"12\"/>", "wifioff": "<path d=\"M12 20h.01\"/><path d=\"M8.5 16.429a5 5 0 0 1 7 0\"/><path d=\"M5 12.859a10 10 0 0 1 5.17-2.69\"/><path d=\"M19 12.859a10 10 0 0 0-2.007-1.523\"/><path d=\"M2 8.82a15 15 0 0 1 4.177-2.643\"/><path d=\"M22 8.82a15 15 0 0 0-11.288-3.764\"/><path d=\"m2 2 20 20\"/>", "arrowup": "<path d=\"m5 12 7-7 7 7\"/><path d=\"M12 19V5\"/>", "arrowdown": "<path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/>", "play": "<polygon points=\"6 3 20 12 6 21 6 3\"/>", "x": "<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>", "trend": "<path d=\"M3 3v16a2 2 0 0 0 2 2h16\"/><path d=\"m19 9-5 5-4-4-3 3\"/>"};
+const LI=n=>`<svg class="li" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${LP[n]||''}</svg>`;
 const CLOUD='M19 50h29a12 12 0 0 0 2-23.8A16 16 0 0 0 20.2 22.6 13.6 13.6 0 0 0 19 50z';
 function icon(code,day){
   const k=wmo(code)[1],id='i'+(++uid);
@@ -578,6 +635,9 @@ const I={
   eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
   share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>'
 };
+function ydHtml(){const y=S.yd,d=S.data;if(!y||!d)return'';const k=S.unit==='C'?1:1.8,df=Math.round((d.daily.temperature_2m_max[0]-y.mx)*k),dn=Math.round((d.daily.temperature_2m_min[0]-y.mn)*k);
+  const t=Math.abs(df)<1?'Dnes je maximum zhruba stejné jako včera':`Dnes je maximum o ${Math.abs(df)}° ${df>0?'vyšší':'nižší'} než včera`;
+  return`<div class="ydsum"><span>${LI(df>0?'up':df<0?'down':'flat')}</span><div>${t} (${T(y.mx)}°).<small>Ranní minimum ${dn===0?'stejné':Math.abs(dn)+'° '+(dn>0?'vyšší':'nižší')} než včera (${T(y.mn)}°).</small></div></div>`}
 function rainCard(a){const v=a.map(x=>x||0),f=v.findIndex(x=>x>.05);let t;
   if(f<0)t='Bez srážek v příštích 2 hodinách.';else if(f===0){const e=v.findIndex(x=>x<=.05);t=e<0?'Srážky potrvají minimálně 2 hodiny.':`Srážky skončí za ${e*15} min.`}else t=`Srážky začnou za ${f*15} min.`;
   return`<section class="card reveal" style="--i:5"><div class="card-h">${I.umb}Srážky v příštích 2 hodinách</div><div class="big" style="font-size:20px;margin-bottom:12px">${t}</div><div class="rb">${v.map(x=>`<i class="${x>.05?'':'z'}" style="height:${Math.max(6,Math.min(100,x*70))}%"></i>`).join('')}</div><div class="rl"><span>Teď</span><span>+30 min</span><span>+60 min</span><span>+90 min</span></div></section>`}
@@ -586,7 +646,7 @@ const POL=[['birch_pollen','Bříza'],['alder_pollen','Olše'],['grass_pollen','
 const polL=v=>v<10?['Nízká','#5fd38d']:v<50?['Mírná','#ffd166']:v<200?['Vysoká','#ff9f4a']:['Velmi vysoká','#ff6b6b'];
 function pollenHtml(a){const it=POL.map(([k,n])=>[n,a[k]]).filter(x=>x[1]!=null&&x[1]>=1).sort((x,y)=>y[1]-x[1]);
   const all=POL.some(([k])=>a[k]!=null);if(!all)return'';
-  return`<div class="card-h" style="margin-top:18px">🌼 Pylová situace</div>`+(it.length?`<div class="pol">${it.slice(0,4).map(([n,v])=>{const l=polL(v);return`<div><span>${n}</span><i style="--c:${l[1]};width:${Math.min(100,8+v/2)}%"></i><b style="color:${l[1]}">${l[0]}</b></div>`}).join('')}</div><div class="note" style="padding-top:8px">Koncentrace zrn/m³, jen Evropa.</div>`:'<div class="note">Žádný významný pyl v ovzduší.</div>')}
+  return`<div class="card-h" style="margin-top:18px">${LI('flower')}Pylová situace</div>`+(it.length?`<div class="pol">${it.slice(0,4).map(([n,v])=>{const l=polL(v);return`<div><span>${n}</span><i style="--c:${l[1]};width:${Math.min(100,8+v/2)}%"></i><b style="color:${l[1]}">${l[0]}</b></div>`}).join('')}</div><div class="note" style="padding-top:8px">Koncentrace zrn/m³, jen Evropa.</div>`:'<div class="note">Žádný významný pyl v ovzduší.</div>')}
 function airCard(a){const v=Math.round(a.european_aqi);return`<div class="card wide reveal" style="--i:17"><div class="card-h">${I.air}Kvalita ovzduší</div><div class="big">${v}<small>${AQL(a.european_aqi)}</small></div><div class="meter uv" style="--w:${Math.min(100,v)}%"><b></b></div><div class="note">PM2,5: ${Math.round(a.pm2_5??0)} µg/m³ · PM10: ${Math.round(a.pm10??0)} µg/m³ · evropský index</div>${pollenHtml(a)}</div>`}
 
 /* ---------- helpers ---------- */
@@ -674,14 +734,14 @@ function render(anim=true){
 
   // hours
   let hrs='';for(let i=0;i<25&&idx+i<d.hourly.time.length;i++){const j=idx+i;const pr=d.hourly.precipitation_probability[j];
-    hrs+=`<div class="h${i?'':' now'}" style="--i:${i}"><div class="t">${i?hhmm(d.hourly.time[j]).slice(0,2):'Teď'}</div>${icon(d.hourly.weather_code[j],d.hourly.is_day[j])}<div class="p">${pr>=20?pr+'%':''}</div><div class="v">${T(i?d.hourly.temperature_2m[j]:cur.temperature_2m)}°</div></div>`}
+    hrs+=`<div class="h${i?'':' now'}" role="button" tabindex="0" data-hj="${j}" style="--i:${i}"><div class="t">${i?hhmm(d.hourly.time[j]).slice(0,2):'Teď'}</div>${icon(d.hourly.weather_code[j],d.hourly.is_day[j])}<div class="p">${pr>=20?pr+'%':''}</div><div class="v">${T(i?d.hourly.temperature_2m[j]:cur.temperature_2m)}°</div></div>`}
   // days
   const nd=Math.min(S.days,dl.time.length),mn7=dl.temperature_2m_min.slice(0,nd),mx7=dl.temperature_2m_max.slice(0,nd);
   const wmin=Math.min(...mn7),wmax=Math.max(...mx7),rg=Math.max(1,wmax-wmin);
   const dnm=i=>i?DAYS[pdate(dl.time[i]).getDay()]:'dnes',iw=mx7.indexOf(wmax),ic=mn7.indexOf(wmin);
   const ps=(dl.precipitation_sum||dl.precipitation_probability_max).slice(0,nd),pm=Math.max(...ps),ir=ps.indexOf(pm);
   const wetN=ps.filter((x,k)=>(dl.precipitation_sum?x>=1:dl.precipitation_probability_max[k]>=50)).length;
-  const dsum=`<div class="dsum"><span>🔥 Nejtepleji <b>${dnm(iw)} ${T(wmax)}°</b></span><span>❄️ Nejchladněji <b>${dnm(ic)} ${T(wmin)}°</b></span><span>${wetN?`🌧️ Deštivých dní <b>${wetN}</b>${dl.precipitation_sum&&pm>=1?` · nejvíc <b>${dnm(ir)}</b>`:''}`:'☀️ <b>Bez výraznějších srážek</b>'}</span></div>`;
+  const dsum=`<div class="dsum"><span>${LI('flame')}Nejtepleji <b>${dnm(iw)} ${T(wmax)}°</b></span><span>${LI('snow')}Nejchladněji <b>${dnm(ic)} ${T(wmin)}°</b></span><span>${wetN?`${LI('rain')}Deštivých dní <b>${wetN}</b>${dl.precipitation_sum&&pm>=1?` · nejvíc <b>${dnm(ir)}</b>`:''}`:LI('sun')+'<b>Bez výraznějších srážek</b>'}</span></div>`;
   let days='';dl.time.slice(0,nd).forEach((t,i)=>{const lo=dl.temperature_2m_min[i],hi=dl.temperature_2m_max[i];const l=(lo-wmin)/rg*100,w=(hi-lo)/rg*100;
     const hue1=Math.max(180,215-lo*3),hue2=Math.max(10,190-hi*6);
     const dot=i===0?`<b style="left:${Math.min(100,Math.max(0,(cur.temperature_2m-wmin)/rg*100))}%"></b>`:'';
@@ -699,21 +759,21 @@ function render(anim=true){
   const gustTxt=S.unit==='C'?Math.round(gust)+' km/h':Math.round(gust*.621)+' mph';
   const n24=Math.max(1,Math.min(24,d.hourly.time.length-idx)),H24=d.hourly.weather_code.slice(idx,idx+n24),T24=d.hourly.temperature_2m.slice(idx,idx+n24),P24=d.hourly.precipitation_probability.slice(idx,idx+n24).map(v=>v||0);
   const tmin=Math.min(...T24),tmax=Math.max(...T24),al=[];
-  if(H24.some(c=>c>=95))al.push(['⛈️','Bouřky','V příštích 24 hodinách jsou možné bouřky.']);
-  if(H24.some(c=>[65,67,75,82,86].includes(c)))al.push(['🌧️','Silné srážky','Očekávej intenzivní déšť nebo sněžení.']);
-  if(tmin<=-8)al.push(['🥶','Silný mráz','Teplota klesne až na '+T(tmin)+'°.']);else if(tmin<=0)al.push(['❄️','Mráz a náledí','Teplota klesne k '+T(tmin)+'°, pozor na kluzké cesty.']);
-  if(tmax>=32)al.push(['🔥','Horko','Teplota vystoupí až na '+T(tmax)+'°. Pij dostatek vody.']);
-  if(gust>=60)al.push(['💨','Silný vítr','Nárazy větru až '+gustTxt+'.']);
-  if(uv>=8)al.push(['☀️','Vysoké UV','Používej ochranu a vyhýbej se polednímu slunci.']);
+  if(H24.some(c=>c>=95))al.push(['bolt','Bouřky','V příštích 24 hodinách jsou možné bouřky.']);
+  if(H24.some(c=>[65,67,75,82,86].includes(c)))al.push(['rain','Silné srážky','Očekávej intenzivní déšť nebo sněžení.']);
+  if(tmin<=-8)al.push(['thermosnow','Silný mráz','Teplota klesne až na '+T(tmin)+'°.']);else if(tmin<=0)al.push(['snow','Mráz a náledí','Teplota klesne k '+T(tmin)+'°, pozor na kluzké cesty.']);
+  if(tmax>=32)al.push(['flame','Horko','Teplota vystoupí až na '+T(tmax)+'°. Pij dostatek vody.']);
+  if(gust>=60)al.push(['wind','Silný vítr','Nárazy větru až '+gustTxt+'.']);
+  if(uv>=8)al.push(['sun','Vysoké UV','Používej ochranu a vyhýbej se polednímu slunci.']);
   const mxP=Math.max(...P24.slice(0,12),0),wet=H24.slice(0,12).some(c=>c>=51),wk=cur.wind_speed_10m;
   const life=[
-    ['🏃','Běhání',feels>=3&&feels<=22&&mxP<40&&wk<30?['Ideální','ok']:feels<-8||feels>30||mxP>=60?['Nevhodné','no']:['Přijatelné','mid']],
-    ['🚗','Mytí auta',P24.every(v=>v<25)&&!H24.some(c=>c>=51)?['Vhodné','ok']:['Počkej na sucho','no']],
-    ['👕','Sušení prádla',!wet&&hum<80&&mxP<30?(wk>=8||hum<60?['Rychle uschne','ok']:['Uschne pomalu','mid']):['Venku ne','no']],
-    ['🧥','Oblečení',[feels<-5?'Zimní bunda, čepice':feels<5?'Zimní bunda':feels<12?'Lehká bunda':feels<18?'Mikina':feels<24?'Tričko':'Letní oděv','n']],
-    ['☂️','Deštník',mxP>=40||wet?['Vezmi si','no']:['Netřeba','ok']]];
+    ['run','Běhání',feels>=3&&feels<=22&&mxP<40&&wk<30?['Ideální','ok']:feels<-8||feels>30||mxP>=60?['Nevhodné','no']:['Přijatelné','mid']],
+    ['car','Mytí auta',P24.every(v=>v<25)&&!H24.some(c=>c>=51)?['Vhodné','ok']:['Počkej na sucho','no']],
+    ['shirt','Sušení prádla',!wet&&hum<80&&mxP<30?(wk>=8||hum<60?['Rychle uschne','ok']:['Uschne pomalu','mid']):['Venku ne','no']],
+    ['layers','Oblečení',[feels<-5?'Zimní bunda, čepice':feels<5?'Zimní bunda':feels<12?'Lehká bunda':feels<18?'Mikina':feels<24?'Tričko':'Letní oděv','n']],
+    ['umbrella','Deštník',mxP>=40||wet?['Vezmi si','no']:['Netřeba','ok']]];
   const mf=moonF(),mill=Math.round((1-Math.cos(2*Math.PI*mf))/2*100),dFull=Math.round(((.5-mf+1)%1)*SYN),dNew=Math.round(((1-mf)%1)*SYN);
-  const alHtml=al.length?`<section class="card warn reveal" style="--i:5"><div class="card-h">⚠️ Upozornění</div>${al.map(a=>`<div class="al"><span>${a[0]}</span><div><b>${a[1]}</b><small>${a[2]}</small></div></div>`).join('')}<div class="note" style="padding-top:6px">Odvozeno z předpovědi, nejde o oficiální výstrahy.</div></section>`:'';
+  const alHtml=al.length?`<section class="card warn reveal" style="--i:5"><div class="card-h">${LI('alert')}Upozornění</div>${al.map(a=>`<div class="al"><span>${LI(a[0])}</span><div><b>${a[1]}</b><small>${a[2]}</small></div></div>`).join('')}<div class="note" style="padding-top:6px">Odvozeno z předpovědi, nejde o oficiální výstrahy.</div></section>`:'';
   const gr=chartSvg(d,idx);
   const summary=`${label}${pp>=30?`, pravděpodobnost srážek ${pp} %`:''}. Dnes maximum ${T(dl.temperature_2m_max[0])}°, minimum ${T(dl.temperature_2m_min[0])}°, vítr ${dirName(cur.wind_direction_10m)} ${windU(cur.wind_speed_10m).replace(/<\/?small>/g,' ').trim()}.`;
 
@@ -724,13 +784,13 @@ function render(anim=true){
     <div class="hero-icon reveal" style="--i:2">${icon(code,day)}</div>
     <div class="reveal" style="--i:3"><div class="temp"><span id="tv">${T(cur.temperature_2m)}</span><sup>°</sup></div></div>
     <div class="cond reveal" style="--i:4">${label}</div>
-    <div class="hl reveal" style="--i:5"><span>↑ ${T(dl.temperature_2m_max[0])}°</span><span>↓ ${T(dl.temperature_2m_min[0])}°</span><span>Pocitově ${T(feels)}°</span></div>
-    ${d._demo?'<div class="reveal" style="--i:6"><span class="chip">● Ukázková data</span></div>':S.stale?`<div class="reveal" style="--i:6"><span class="chip">● Offline · data z ${new Date(S.stale).toLocaleTimeString('cs-CZ',{hour:'2-digit',minute:'2-digit'})}</span></div>`:''}
+    <div class="hl reveal" style="--i:5"><span>${LI('arrowup')}${T(dl.temperature_2m_max[0])}°</span><span>${LI('arrowdown')}${T(dl.temperature_2m_min[0])}°</span><span>Pocitově ${T(feels)}°</span></div>
+    ${d._demo?'<div class="reveal" style="--i:6"><span class="chip"><i class="cdot"></i>Ukázková data</span></div>':S.stale?`<div class="reveal" style="--i:6"><span class="chip"><i class="cdot"></i>Offline · data z ${new Date(S.stale).toLocaleTimeString('cs-CZ',{hour:'2-digit',minute:'2-digit'})}</span></div>`:''}
   </section>
-  ${alHtml}<div id="rainslot" class="${S.rain?'':'hidden'}">${S.rain?rainCard(S.rain):''}</div>
-  <section class="card reveal" style="--i:6"><div class="card-h">${I.clock}Hodinová předpověď</div><div class="summary">${summary}</div>${S.hview==='graph'&&gr?gr:`<div class="hours">${hrs}</div>`}</section>
+  ${alHtml}<div id="ydslot">${ydHtml()}</div><div id="rainslot" class="${S.rain?'':'hidden'}">${S.rain?rainCard(S.rain):''}</div>
+  <section class="card reveal" style="--i:6"><div class="card-h">${I.clock}Hodinová předpověď</div><div class="summary">${summary}</div>${S.hview==='graph'&&gr?gr:`<div class="hours" id="hrs">${hrs}</div><div class="hprog"><i id="hprog"></i></div>`}</section>
   <section class="card reveal" style="--i:7"><div class="card-h">${I.cal}Předpověď na ${nd} dní</div>${dsum}${days}${nd>7?'<div class="dnote">Dny 8–14 jsou méně přesné a slouží jen jako orientace.</div>':''}</section>
-  <section class="card reveal" style="--i:8"><div class="card-h">🌿 Životní index</div><div class="lfc" id="lfc">${life.map((x,k)=>`<div class="lt"><div class="e">${x[0]}</div><div class="n">${x[1]}</div><i class="${x[2][1]}">${x[2][0]}</i><small>${['Teplota, vítr a srážky','Bez deště do 24 h','Vlhkost a vítr','Podle pocitové teploty','Srážky v příštích 12 h'][k]}</small></div>`).join('')}</div><div class="dots" id="lfd">${life.map((x,k)=>`<i class="${k?'':'on'}"></i>`).join('')}</div></section>
+  <section class="card reveal" style="--i:8"><div class="card-h">${LI('leaf')}Životní index</div><div class="lfc" id="lfc">${life.map((x,k)=>`<div class="lt"><div class="e">${LI(x[0])}</div><div class="n">${x[1]}</div><i class="${x[2][1]}">${x[2][0]}</i><small>${['Teplota, vítr a srážky','Bez deště do 24 h','Vlhkost a vítr','Podle pocitové teploty','Srážky v příštích 12 h'][k]}</small></div>`).join('')}</div><div class="dots" id="lfd">${life.map((x,k)=>`<i class="${k?'':'on'}"></i>`).join('')}</div></section>
   <section class="grid">
     <div class="card reveal" style="--i:8"><div class="card-h">${I.thermo}Pocitově</div><div class="big">${T(feels)}°</div><div class="note">${Math.abs(diff)<1.5?'Podobně jako skutečná teplota.':diff<0?'Vítr a vlhkost způsobují, že je cítit chladněji.':'Vlhkost způsobuje, že je cítit tepleji.'}</div></div>
     <div class="card reveal" style="--i:9"><div class="card-h">${I.drop}Vlhkost</div><div class="big">${hum}<small>%</small></div><div class="meter" style="--w:${hum}%"><i></i></div><div class="note">${hum>80?'Velmi vlhký vzduch.':hum<35?'Suchý vzduch.':'Příjemná vlhkost.'}</div></div>
@@ -750,8 +810,8 @@ function render(anim=true){
       <div class="sunrow"><div>Východ<b>${hhmm(dl.sunrise[0])}</b></div><div style="text-align:right">Západ<b>${hhmm(dl.sunset[0])}</b></div></div>
       <div class="note">${sunNote}</div>
     </div>
-    <div class="card wide reveal" style="--i:16"><div class="card-h">🌙 Měsíc</div><div class="moon">${moonSvg(mf)}<div><div class="big" style="font-size:24px">${moonName(mf)}</div><div class="note" style="padding-top:4px">Osvětleno ${mill} %<br>Úplněk za ${dFull} dní · nov za ${dNew} dní</div></div></div></div>
-    <div class="card wide reveal" style="--i:18;grid-column:span 2"><div class="card-h">📡 Radar a mapy</div><div class="mapchips" id="mapchips">${[['radar','🌧️ Radar'],['wind','💨 Vítr'],['temp','🌡️ Teplota'],['clouds','☁️ Mraky']].map((x,k)=>`<button data-map="${x[0]}" class="${k?'':'on'}">${x[1]}</button>`).join('')}</div><div class="mapbox" id="mapbox"><button class="mapgo" data-map="radar">▶ Načíst mapu</button></div><div class="note" style="padding-top:8px">Interaktivní mapa Windy, načte se až po klepnutí.</div></div>
+    <div class="card wide reveal" style="--i:16"><div class="card-h">${LI('moon')}Měsíc</div><div class="moon">${moonSvg(mf)}<div><div class="big" style="font-size:24px">${moonName(mf)}</div><div class="note" style="padding-top:4px">Osvětleno ${mill} %<br>Úplněk za ${dFull} dní · nov za ${dNew} dní</div></div></div></div>
+    <div class="card wide reveal" style="--i:18;grid-column:span 2"><div class="card-h">${LI('radar')}Radar a mapy</div><div class="mapchips" id="mapchips">${[['radar','rain','Radar'],['wind','wind','Vítr'],['temp','thermo','Teplota'],['clouds','cloud','Mraky']].map((x,k)=>`<button data-map="${x[0]}" class="${k?'':'on'}">${LI(x[1])}${x[2]}</button>`).join('')}</div><div class="mapbox" id="mapbox"><button class="mapgo" data-map="radar">${LI('play')}Načíst mapu</button></div><div class="note" style="padding-top:8px">Interaktivní mapa Windy, načte se až po klepnutí.</div></div>
     <div id="airslot" class="${S.air?'':'hidden'}" style="grid-column:span 2">${S.air?airCard(S.air):''}</div>
   </section>
   <div class="foot"><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button id="refresh">${I.ref}Aktualizováno ${new Date(S.fetchedAt||Date.now()).toLocaleTimeString('cs-CZ',{hour:'2-digit',minute:'2-digit'})}</button><button id="share">${I.share}Sdílet</button></div><div style="margin-top:10px">TadxWeather · data Open-Meteo</div></div>`;
@@ -759,6 +819,7 @@ function render(anim=true){
   const m=$('#main');m.classList.toggle('quiet',!!S.quiet);m.classList.remove('in');void m.offsetWidth;m.classList.add('in');
   countTo($('#tv'),T(cur.temperature_2m));
   setTimeout(()=>{const n=$('#needle svg');if(n)n.style.transform=`rotate(${cur.wind_direction_10m+180}deg)`},500);
+  const hc=$('#hrs');if(hc){const th=$('#hprog'),up=()=>{const m=hc.scrollWidth-hc.clientWidth,w=Math.max(.15,hc.clientWidth/hc.scrollWidth);th.style.width=w*100+'%';th.style.transform=`translateX(${m>0?hc.scrollLeft/m*(1/w-1)*100:0}%)`};hc.onscroll=up;up()}
   const lc=$('#lfc');if(lc){const ds=document.querySelectorAll('#lfd i');lc.onscroll=()=>{const m=lc.scrollWidth-lc.clientWidth,i=m>0?Math.round(lc.scrollLeft/m*(ds.length-1)):0;ds.forEach((x,k)=>x.classList.toggle('on',k===i))}}
   clearInterval(S.lfT);
   if(lc&&!reduce){let hold=0,vis=false;const stop=()=>{hold=Date.now()+7000};
@@ -780,7 +841,7 @@ function countTo(el,to){if(!el)return;const from=S.lastTemp==null?to-8:S.lastTem
 /* ---------- actions ---------- */
 async function load(p,keepScroll){
   S.place=p;store.set('tadx.last',p);
-  if(!keepScroll){skeleton();scrollTo({top:0,behavior:'smooth'});S.air=null;S.rain=null}
+  if(!keepScroll){skeleton();scrollTo({top:0,behavior:'smooth'});S.air=null;S.rain=null;S.yd=null}
   let d=null,stale=null;
   try{d=await LIVE.wx(p);S.demo=false;$('#banner').classList.add('hidden');cacheSet(p,d)}
   catch(e){const c=cacheGet(p);if(c){d=c.d;stale=c.t}else goDemo()}
@@ -788,6 +849,7 @@ async function load(p,keepScroll){
   if(S.place!==p)return;
   S.data=d;S.stale=stale;S.fetchedAt=stale||Date.now();S.quiet=!!keepScroll;
   render();hideSplash();
+  if(!d._demo&&!stale)LIVE.yday(p).then(y=>{if(S.place!==p||!y)return;S.yd=y;const el=$('#ydslot');if(el)el.innerHTML=ydHtml()}).catch(()=>{});
   if(!d._demo&&!stale)LIVE.rain(p).then(a=>{if(S.place!==p||!a)return;S.rain=a;const el=$('#rainslot');if(el){el.innerHTML=rainCard(a);el.classList.remove('hidden')}}).catch(()=>{});
   if(!d._demo&&!stale)LIVE.air(p).then(a=>{if(S.place!==p||!a||a.european_aqi==null)return;S.air=a;const el=$('#airslot');if(el){el.innerHTML=airCard(a);el.classList.remove('hidden')}}).catch(()=>{});
 }
@@ -795,7 +857,7 @@ function goDemo(){if(S.demo)return;S.demo=true;$('#banner').classList.remove('hi
 function toggleFav(){
   const p=S.place,b=$('#fav');
   if(isFav(p)){S.favs=S.favs.filter(f=>!(Math.abs(f.lat-p.lat)<.01&&Math.abs(f.lon-p.lon)<.01));b.classList.remove('on');toast('Odebráno z oblíbených')}
-  else{S.favs.unshift({name:p.name,cc:p.cc,country:p.country,admin:p.admin,lat:p.lat,lon:p.lon});b.classList.add('on');toast('⭐ Přidáno do oblíbených');b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse')}
+  else{S.favs.unshift({name:p.name,cc:p.cc,country:p.country,admin:p.admin,lat:p.lat,lon:p.lon});b.classList.add('on');toast('Přidáno do oblíbených');b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse')}
   $('#fav').setAttribute('aria-pressed',isFav(p));saveFavs();$('#chipw').innerHTML=chips();bindChips();vib();
 }
 function setUnit(u){if(u===S.unit)return;S.unit=u;store.set('tadx.unit',u);S.lastTemp=null;S.quiet=true;render()}
@@ -889,20 +951,20 @@ function renderSet(pg=setPage,dir=''){
     h=`<div class="slab">Účet</div><div class="grp">${u?`<div class="acc"><div class="av" style="${u.pic?`background-image:url(&quot;${esc(u.pic)}&quot;)`:''}">${u.pic?'':esc((u.name||'?')[0])}</div><div style="flex:1;min-width:0"><div style="font-weight:600">${esc(u.name||'')}</div><div style="font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis">${esc(u.email||'')}</div></div><button class="cancel" id="so">Odhlásit</button></div>`:`<div class="acc"><div style="flex:1"><div style="font-weight:600">Přihlášení přes Google</div><div style="font-size:13px;color:var(--muted)">Ukládej oblíbené lokace do svého účtu</div></div></div><div style="padding:0 16px 16px;display:flex;justify-content:center"><div id="gbtn"></div></div>`}</div>
     <div class="slab">Vzhled a jednotky</div>
     <div class="grp">
-      <div class="sr"><div class="srw"><em class="si">🌗</em><span class="tx">Režim<small>Podle systému, světlý nebo tmavý</small></span></div><div class="sc">${segHtml('segM',[['auto','Auto'],['light','Světlý'],['dark','Tmavý']],S.mode)}</div></div>
-      <div class="sr"><div class="srw"><em class="si">🌡️</em><span class="tx">Jednotky<small>Teplota a rychlost větru</small></span></div><div class="sc">${segHtml('segU',[['C','°C · km/h'],['F','°F · mph']],S.unit)}</div></div>
-      <div class="sr"><div class="srw"><em class="si">🕒</em><span class="tx">Hodinová předpověď<small>Posuvné karty, nebo graf</small></span></div><div class="sc">${segHtml('segH',[['list','Karty'],['graph','Graf']],S.hview)}</div></div>
-      <div class="sr"><div class="srw"><em class="si">📅</em><span class="tx">Denní předpověď<small>Kolik dní se zobrazí</small></span></div><div class="sc">${segHtml('segD',[['7','7 dní'],['14','14 dní']],String(S.days))}</div></div>
+      <div class="sr"><div class="srw"><em class="si">${LI('sunmoon')}</em><span class="tx">Režim<small>Podle systému, světlý nebo tmavý</small></span></div><div class="sc">${segHtml('segM',[['auto','Auto'],['light','Světlý'],['dark','Tmavý']],S.mode)}</div></div>
+      <div class="sr"><div class="srw"><em class="si">${LI('thermo')}</em><span class="tx">Jednotky<small>Teplota a rychlost větru</small></span></div><div class="sc">${segHtml('segU',[['C','°C · km/h'],['F','°F · mph']],S.unit)}</div></div>
+      <div class="sr"><div class="srw"><em class="si">${LI('clock')}</em><span class="tx">Hodinová předpověď<small>Posuvné karty, nebo graf</small></span></div><div class="sc">${segHtml('segH',[['list','Karty'],['graph','Graf']],S.hview)}</div></div>
+      <div class="sr"><div class="srw"><em class="si">${LI('cal')}</em><span class="tx">Denní předpověď<small>Kolik dní se zobrazí</small></span></div><div class="sc">${segHtml('segD',[['7','7 dní'],['14','14 dní']],String(S.days))}</div></div>
     </div>
     <div class="slab">Aplikace</div>
     <div class="grp">
-      <button class="srw" id="sonb"><em class="si">👋</em><span class="tx">Úvod do aplikace<small>Co TadxWeather umí</small></span>${I.arrow}</button>
-      <button class="srw" data-go="about"><em class="si">ℹ️</em><span class="tx">O aplikaci<small>Verze 2.7 · zdroj dat · upozornění</small></span>${I.arrow}</button>
+      <button class="srw" id="sonb"><em class="si">${LI('hand')}</em><span class="tx">Úvod do aplikace<small>Co TadxWeather umí</small></span>${I.arrow}</button>
+      <button class="srw" data-go="about"><em class="si">${LI('info')}</em><span class="tx">O aplikaci<small>Verze 3.0 · zdroj dat · upozornění</small></span>${I.arrow}</button>
     </div>
     <div class="slab">Hodnocení</div>
-    <div class="grp"><div class="srw"><em class="si">⭐</em><span class="tx">Ohodnotit aplikaci<small>Jak se ti TadxWeather líbí?</small></span></div><div class="stars" id="stars">${[1,2,3,4,5].map(n=>`<button data-n="${n}" class="${n<=r?'on':''}">${SV}</button>`).join('')}</div></div>`;
+    <div class="grp"><div class="srw"><em class="si">${LI('star')}</em><span class="tx">Ohodnotit aplikaci<small>Jak se ti TadxWeather líbí?</small></span></div><div class="stars" id="stars">${[1,2,3,4,5].map(n=>`<button data-n="${n}" class="${n<=r?'on':''}">${SV}</button>`).join('')}</div></div>`;
   }else{
-    h=`<div class="abt-hero">${icon(2,1).replace('class="ic"','class="ic ab-logo"')}<div class="ab-name">Tadx<b>Weather</b></div><div class="ab-ver">Verze 2.7</div></div>
+    h=`<div class="abt-hero">${icon(2,1).replace('class="ic"','class="ic ab-logo"')}<div class="ab-name">Tadx<b>Weather</b></div><div class="ab-ver">Verze 3.0</div></div>
     <div class="grp"><div class="abt-text">TadxWeather ukazuje aktuální počasí, hodinovou a 7denní předpověď pro libovolné město na světě, včetně kvality ovzduší, životního indexu a fáze Měsíce. Oblíbená místa se ukládají v tomto zařízení, případně pod tvým Google účtem.</div></div>
     <div class="grp"><div class="srw"><span class="tx">Zdroj dat<small>Open-Meteo.com (CC BY 4.0)</small></span></div><div class="srw"><span class="tx">Upozornění<small>Vychází z předpovědi, nejde o oficiální výstrahy</small></span></div></div>`;
   }
@@ -914,7 +976,7 @@ function renderSet(pg=setPage,dir=''){
     $('#sonb').onclick=()=>{closeSet();setTimeout(showOnb,450)};
     bindSeg('segM',(m,b)=>{const rc=b.getBoundingClientRect();setMode(m,rc.left+rc.width/2,rc.top+rc.height/2)});
     bindSeg('segU',setUnit);bindSeg('segH',setHview);bindSeg('segD',setDays);
-    document.querySelectorAll('#stars button').forEach(b=>b.onclick=()=>{const n=+b.dataset.n;store.set('tadx.rate',n);vib();document.querySelectorAll('#stars button').forEach((x,i)=>{x.classList.remove('on','pop');if(i<n)setTimeout(()=>{x.classList.add('on','pop')},i*90)});toast(n>=4?'Děkujeme za skvělé hodnocení! ★':'Díky za zpětnou vazbu, zlepšíme se')});
+    document.querySelectorAll('#stars button').forEach(b=>b.onclick=()=>{const n=+b.dataset.n;store.set('tadx.rate',n);vib();document.querySelectorAll('#stars button').forEach((x,i)=>{x.classList.remove('on','pop');if(i<n)setTimeout(()=>{x.classList.add('on','pop')},i*90)});toast(n>=4?'Děkujeme za skvělé hodnocení!':'Díky za zpětnou vazbu, zlepšíme se')});
   }
 }
 const setEl=$('#set');
@@ -927,10 +989,19 @@ function openDay(i){const d=S.data;if(!d)return;const dl=d.daily,[lab]=wmo(dl.we
   const rain=mm==null?'–':S.unit==='C'?mm.toFixed(1)+' mm':(mm*.0394).toFixed(2)+' in',wind=wv==null?'–':S.unit==='C'?Math.round(wv)+' km/h':Math.round(wv*.621)+' mph',uvv=dl.uv_index_max[i]??0;
   $('#dtitle').textContent=i?cap(pdate(dl.time[i]).toLocaleDateString('cs-CZ',{weekday:'long',day:'numeric',month:'long'})):'Dnes';
   const tile=(a,b)=>`<div class="dt"><small>${a}</small><b>${b}</b></div>`;
-  $('#dBody').innerHTML=`<div style="text-align:center;padding:6px 0"><div style="width:100px;height:100px;margin:0 auto">${icon(dl.weather_code[i],1)}</div><div style="font-size:20px;margin-top:4px">${lab}</div><div style="color:var(--muted);margin-top:4px">↑ ${T(dl.temperature_2m_max[i])}° · ↓ ${T(dl.temperature_2m_min[i])}°</div></div><div class="card" style="margin:12px 0 0"><div class="card-h">${I.thermo}Průběh teploty</div>${chartSvg(d,i*24,false,24)}</div><div class="parts">${[['Noc',0],['Ráno',6],['Odpoledne',14],['Večer',20]].map(([n,h])=>{const j=i*24+h;return d.hourly.time[j]==null?'':`<div><small>${n}</small>${icon(d.hourly.weather_code[j],h>=7&&h<=17?1:0)}<b>${T(d.hourly.temperature_2m[j])}°</b></div>`}).join('')}</div><div class="dgrid">${tile('Srážky',rain)}${tile('Pravděpodobnost srážek',(dl.precipitation_probability_max[i]??0)+' %')}${tile('Max. vítr',wind)}${tile('UV index',Math.round(uvv)+' · '+uvLabel(uvv))}${tile('Východ slunce',hhmm(dl.sunrise[i]))}${tile('Západ slunce',hhmm(dl.sunset[i]))}${tile('Délka dne',fmtDur(ss-sr))}</div>`;
-  curDay=i;$('#dprev').disabled=i<=0;$('#dnext').disabled=i>=Math.min(S.days,dl.time.length)-1;dsh.classList.add('open');dsh.setAttribute('aria-hidden','false');vib()}
+  $('#dBody').innerHTML=`<div style="text-align:center;padding:6px 0"><div style="width:100px;height:100px;margin:0 auto">${icon(dl.weather_code[i],1)}</div><div style="font-size:20px;margin-top:4px">${lab}</div><div style="color:var(--muted);margin-top:4px">${LI('arrowup')}${T(dl.temperature_2m_max[i])}° &nbsp; ${LI('arrowdown')}${T(dl.temperature_2m_min[i])}°</div></div><div class="card" style="margin:12px 0 0"><div class="card-h">${I.thermo}Průběh teploty</div>${chartSvg(d,i*24,false,24)}</div><div class="parts">${[['Noc',0],['Ráno',6],['Odpoledne',14],['Večer',20]].map(([n,h])=>{const j=i*24+h;return d.hourly.time[j]==null?'':`<div><small>${n}</small>${icon(d.hourly.weather_code[j],h>=7&&h<=17?1:0)}<b>${T(d.hourly.temperature_2m[j])}°</b></div>`}).join('')}</div><div class="dgrid">${tile('Srážky',rain)}${tile('Pravděpodobnost srážek',(dl.precipitation_probability_max[i]??0)+' %')}${tile('Max. vítr',wind)}${tile('UV index',Math.round(uvv)+' · '+uvLabel(uvv))}${tile('Východ slunce',hhmm(dl.sunrise[i]))}${tile('Západ slunce',hhmm(dl.sunset[i]))}${tile('Délka dne',fmtDur(ss-sr))}</div>`;
+  curDay=i;$('#dprev').style.display=$('#dnext').style.display='';$('#dprev').disabled=i<=0;$('#dnext').disabled=i>=Math.min(S.days,dl.time.length)-1;dsh.classList.add('open');dsh.setAttribute('aria-hidden','false');vib()}
 let curDay=0;
 function stepDay(k){const n=Math.min(S.days,S.data.daily.time.length),i=curDay+k;if(i<0||i>=n)return;openDay(i)}
+function openHour(j){const d=S.data;if(!d)return;const h=d.hourly,[lab]=wmo(h.weather_code[j]),g=k=>h[k]?h[k][j]:null;
+  const day=pdate(h.time[j]),today=pdate(d.current.time).getDate()===day.getDate();
+  $('#dtitle').textContent=(today?'Dnes ':cap(day.toLocaleDateString('cs-CZ',{weekday:'long'}))+' ')+hhmm(h.time[j]);
+  const f=g('apparent_temperature'),hu=g('relative_humidity_2m'),w=g('wind_speed_10m'),pr=g('precipitation'),pp=h.precipitation_probability[j]??0;
+  const tile=(a,b)=>`<div class="dt"><small>${a}</small><b>${b}</b></div>`;
+  $('#dBody').innerHTML=`<div style="text-align:center;padding:6px 0"><div style="width:100px;height:100px;margin:0 auto">${icon(h.weather_code[j],h.is_day[j])}</div><div style="font-size:44px;font-weight:300">${T(h.temperature_2m[j])}°</div><div style="font-size:18px">${lab}</div></div><div class="dgrid">${tile('Pocitově',f==null?'–':T(f)+'°')}${tile('Pravděpodobnost srážek',pp+' %')}${tile('Srážky',pr==null?'–':S.unit==='C'?pr.toFixed(1)+' mm':(pr*.0394).toFixed(2)+' in')}${tile('Vítr',w==null?'–':windU(w).replace(/<\/?small>/g,' '))}${tile('Vlhkost',hu==null?'–':Math.round(hu)+' %')}</div>`;
+  $('#dprev').style.display=$('#dnext').style.display='none';dsh.classList.add('open');dsh.setAttribute('aria-hidden','false');vib()}
+document.addEventListener('click',e=>{const x=e.target.closest('.h[data-hj]');if(x)openHour(+x.dataset.hj)});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.h[data-hj]')){e.preventDefault();openHour(+e.target.dataset.hj)}});
 function closeDay(){dsh.classList.remove('open');dsh.setAttribute('aria-hidden','true')}
 dsh.querySelectorAll('[data-dclose]').forEach(e=>e.onclick=closeDay);$('#dprev').onclick=()=>stepDay(-1);$('#dnext').onclick=()=>stepDay(1);
 function dragClose(sh,fn){const pn=sh.querySelector('.panel'),gb=sh.querySelector('.grab');let y0=null,dy=0;
@@ -951,6 +1022,14 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-map]');if(
   let f=box.querySelector('iframe');
   if(!f){box.innerHTML='<iframe title="Mapa počasí" loading="lazy" allowfullscreen referrerpolicy="no-referrer"></iframe>';f=box.querySelector('iframe')}
   f.src=mapSrc(l)});
+
+/* ---------- tazeni mysi u carouselu ---------- */
+(function(){let el=null,x0=0,s0=0,moved=0;
+  document.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;const c=e.target.closest('.hours,.lfc,.chips,.mapchips');if(!c||c.scrollWidth<=c.clientWidth)return;el=c;x0=e.clientX;s0=c.scrollLeft;moved=0;c.style.scrollSnapType='none';c.style.cursor='grabbing'});
+  addEventListener('pointermove',e=>{if(!el)return;const dx=e.clientX-x0;moved=Math.max(moved,Math.abs(dx));el.scrollLeft=s0-dx});
+  addEventListener('pointerup',()=>{if(!el)return;const c=el;el=null;c.style.cursor='';requestAnimationFrame(()=>{c.style.scrollSnapType=''});if(moved>5)c.dataset.drag=1;setTimeout(()=>delete c.dataset.drag,50)});
+  document.addEventListener('click',e=>{const c=e.target.closest('[data-drag]');if(c){e.stopPropagation();e.preventDefault()}},true);
+})();
 /* ---------- gesta ---------- */
 (function(){const ind=document.createElement('div');ind.id='ptr';ind.innerHTML=I.ref;document.body.appendChild(ind);
   let y0=null,dy=0;
@@ -969,14 +1048,14 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-map]');if(
 /* ---------- onboarding ---------- */
 const OB=[
  {ic:()=>icon(2,1),t:'Vítej v TadxWeather',p:'Přehledné a rychlé počasí pro libovolné město na světě. Bez účtu a bez zbytečností.'},
- {ic:()=>icon(0,1),t:'Co všechno umí',list:[['🌡️','Aktuální počasí a pocitová teplota'],['🕒','Hodinová a 7denní předpověď'],['📈','Graf teploty a srážek'],['🌿','Životní index, ovzduší a fáze Měsíce'],['⚠️','Upozornění na bouřky, mráz nebo vítr']]},
- {ic:()=>icon(63,1),t:'Hledej a ukládej',list:[['🔍','Vyhledej jakékoli město na světě'],['📍','Použij svoji aktuální polohu'],['⭐','Ulož si oblíbená místa jedním klepnutím'],['👆','Přejetím doleva a doprava měníš oblíbená města'],['📴','Bez internetu uvidíš poslední předpověď']]},
- {ic:()=>icon(0,0),t:'Přizpůsob si ji',p:'V Nastavení → Přizpůsobení zvolíš tmavý nebo světlý režim, °C nebo °F a jestli chceš hodinovou předpověď jako karty, nebo jako graf.'}
+ {ic:()=>icon(0,1),t:'Co všechno umí',list:[['thermo','Aktuální počasí a pocitová teplota'],['clock','Hodinová a 14denní předpověď'],['trend','Graf teploty a srážek'],['leaf','Životní index, ovzduší a fáze Měsíce'],['alert','Upozornění na bouřky, mráz nebo vítr']]},
+ {ic:()=>icon(63,1),t:'Hledej a ukládej',list:[['search','Vyhledej jakékoli město na světě'],['pin','Použij svoji aktuální polohu'],['star','Ulož si oblíbená místa jedním klepnutím'],['swipe','Přejetím doleva a doprava měníš oblíbená města'],['wifioff','Bez internetu uvidíš poslední předpověď']]},
+ {ic:()=>icon(0,0),t:'Přizpůsob si ji',p:'V Nastavení zvolíš tmavý nebo světlý režim, °C nebo °F, délku denní předpovědi a jestli chceš hodinovou předpověď jako karty, nebo jako graf.'}
 ];
 let obI=0;
 function showOnb(){
   const el=$('#onb');obI=0;
-  el.innerHTML=`<button class="ob-skip" id="obSkip">Přeskočit</button><div class="ob-view"><div class="ob-track" id="obT">${OB.map(o=>`<section class="ob-pg${o.list?' l':''}"><div class="ob-art">${o.ic()}</div><h2>${o.t}</h2>${o.p?`<p>${o.p}</p>`:''}${o.list?`<ul>${o.list.map(x=>`<li><span>${x[0]}</span>${x[1]}</li>`).join('')}</ul>`:''}</section>`).join('')}</div></div><div class="ob-foot"><div class="dots" id="obD">${OB.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div><button class="ob-btn" id="obN">Další</button></div>`;
+  el.innerHTML=`<button class="ob-skip" id="obSkip">Přeskočit</button><div class="ob-view"><div class="ob-track" id="obT">${OB.map(o=>`<section class="ob-pg${o.list?' l':''}"><div class="ob-art">${o.ic()}</div><h2>${o.t}</h2>${o.p?`<p>${o.p}</p>`:''}${o.list?`<ul>${o.list.map(x=>`<li><span>${LI(x[0])}</span>${x[1]}</li>`).join('')}</ul>`:''}</section>`).join('')}</div></div><div class="ob-foot"><div class="dots" id="obD">${OB.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div><button class="ob-btn" id="obN">Další</button></div>`;
   el.classList.remove('hidden','show');setTimeout(()=>el.classList.add('show'),30);
   const go=i=>{obI=Math.max(0,Math.min(OB.length-1,i));$('#obT').style.transform=`translateX(${-obI*100}%)`;[...$('#obD').children].forEach((d,k)=>d.classList.toggle('on',k===obI));$('#obN').textContent=obI===OB.length-1?'Začít':'Další'};
   const end=()=>{store.set('tadx.onb',1);el.classList.remove('show');setTimeout(()=>el.classList.add('hidden'),650)};
@@ -986,7 +1065,7 @@ function showOnb(){
 }
 
 /* ---------- boot ---------- */
-function hideSplash(){const s=$('#splash');if(!s.classList.contains('out'))setTimeout(()=>s.classList.add('out'),Math.max(0,1300-(performance.now()-t0)))}
+function hideSplash(){const s=$('#splash');if(!s.classList.contains('out'))setTimeout(()=>s.classList.add('out'),Math.max(0,2600-(performance.now()-t0)))}
 const t0=performance.now();
 $('#spLogo').outerHTML=icon(2,1).replace('class="ic"','class="ic sp-logo"');
 $('#brandLogo').outerHTML=icon(2,1);
